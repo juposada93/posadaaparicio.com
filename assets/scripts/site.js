@@ -23,6 +23,17 @@ function tags(values) {
   return values.map((value) => `<span class="tag">${escapeHtml(value)}</span>`).join("");
 }
 
+function categoryLabel(category) {
+  const labels = {
+    published: "Published",
+    working: "Working papers",
+    wip: "Work in progress",
+    reports: "Reports"
+  };
+
+  return labels[category] || category;
+}
+
 function paperCard(item, compact = false) {
   return `
     <article class="paper-card reveal" data-category="${escapeHtml(item.category)}">
@@ -31,7 +42,7 @@ function paperCard(item, compact = false) {
       </div>
       <div class="paper-body">
         <div class="paper-kicker">
-          <span>${escapeHtml(item.status)}</span>
+          <span>${escapeHtml(categoryLabel(item.category))}</span>
           <span>${escapeHtml(item.year)}</span>
         </div>
         <h3>${escapeHtml(compact ? item.shortTitle : item.title)}</h3>
