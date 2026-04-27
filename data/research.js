@@ -14,7 +14,7 @@ window.JPA_RESEARCH = [
     insight: "Agenda-setting can change the strategic value of violence, moving conflict actors across target types.",
     visual: { type: "news", accent: "#9c3f2f", label: "AH news", metric: "2002-2008" },
     links: [
-      { label: "Article", url: "https://doi.org/10.1016/j.jebo.2022.07.029" },
+      { label: "Journal of Economic Behavior & Organization", url: "https://doi.org/10.1016/j.jebo.2022.07.029" },
       { label: "IZA", url: "https://www.iza.org/publications/dp/13834/captivating-news-in-colombia" }
     ],
     featured: true
@@ -87,7 +87,7 @@ window.JPA_RESEARCH = [
     insight: "Makes replication review legible as an input into the publication record.",
     visual: { type: "audit", accent: "#5f6f2f", label: "Checked code", metric: "2026" },
     links: [
-      { label: "Economic Journal", url: "https://doi.org/10.1093/ej/ueag040" }
+      { label: "The Economic Journal", url: "https://doi.org/10.1093/ej/ueag040" }
     ],
     featured: false
   },
