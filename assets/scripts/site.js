@@ -115,6 +115,26 @@ function paperVisual(type, label, metric) {
         <circle class="viz-dot cool" cx="232" cy="118" r="5"/>
         ${caption}
       </svg>`,
+    codeAudit: `
+      <svg ${common}>
+        <rect class="viz-box wide" x="42" y="36" width="236" height="98"/>
+        <path class="viz-grid" d="M65 62H138M65 83H119M65 104H151M170 62H246M170 83H228M170 104H250"/>
+        <path class="viz-check" d="M76 113L95 129L134 79"/>
+        <circle class="viz-dot hot" cx="252" cy="62" r="5"/>
+        <circle class="viz-dot cool" cx="253" cy="104" r="5"/>
+        ${caption}
+      </svg>`,
+    commentAudit: `
+      <svg ${common}>
+        <rect class="viz-box" x="47" y="44" width="82" height="82" rx="4"/>
+        <rect class="viz-box wide" x="172" y="38" width="101" height="94" rx="4"/>
+        <path class="viz-grid" d="M64 68H111M64 88H104M190 65H253M190 86H240M190 107H257"/>
+        <path class="viz-wire" d="M129 78C147 64 157 64 172 76"/>
+        <circle class="viz-node hot" cx="147" cy="65" r="11"/>
+        <path class="viz-line cool" d="M54 130C88 99 112 99 145 130"/>
+        <path class="viz-wave" d="M176 118C202 86 236 87 264 58"/>
+        ${caption}
+      </svg>`,
     phone: `
       <svg ${common}>
         <rect class="viz-device" x="74" y="35" width="70" height="108" rx="12"/>

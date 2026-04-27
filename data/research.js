@@ -68,7 +68,7 @@ window.JPA_RESEARCH = [
     methods: ["Team experiment", "Replication audit", "AI evaluation"],
     summary: "Compares how human, AI-assisted, and AI-led teams assess reproducibility in quantitative social science.",
     insight: "Turns the question of AI reliability into a measurable team-design problem.",
-    visual: { type: "audit", accent: "#24546b", label: "Repro check", metric: "AI" },
+    visual: { type: "teams", accent: "#24546b", label: "Team modes", metric: "3 designs" },
     links: [],
     featured: true
   },
@@ -85,7 +85,7 @@ window.JPA_RESEARCH = [
     methods: ["Computational reproducibility", "Replication package audit", "Robustness checks"],
     summary: "Assesses the reproducibility of a field experiment on telementoring and homeschooling during school closures.",
     insight: "Makes replication review legible as an input into the publication record.",
-    visual: { type: "audit", accent: "#5f6f2f", label: "Checked code", metric: "2026" },
+    visual: { type: "codeAudit", accent: "#5f6f2f", label: "Checked code", metric: "2026" },
     links: [
       { label: "The Economic Journal", url: "https://doi.org/10.1093/ej/ueag040" }
     ],
@@ -104,7 +104,7 @@ window.JPA_RESEARCH = [
     methods: ["Replication audit", "RCT diagnostics", "Sensitivity analysis"],
     summary: "Reviews the reproducibility and robustness of a low-tech remote-learning intervention in Bangladesh.",
     insight: "Connects replication checks to practical lessons for education interventions.",
-    visual: { type: "audit", accent: "#b05c37", label: "Comment", metric: "I4R" },
+    visual: { type: "commentAudit", accent: "#b05c37", label: "Comment", metric: "I4R" },
     links: [],
     featured: false
   },
