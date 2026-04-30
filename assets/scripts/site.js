@@ -26,9 +26,9 @@ function tags(values) {
 function categoryLabel(category) {
   const labels = {
     published: "Published",
+    books: "Books",
     working: "Working papers",
-    wip: "Work in progress",
-    reports: "Reports"
+    wip: "Work in progress"
   };
 
   return labels[category] || category;

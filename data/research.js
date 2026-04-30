@@ -23,8 +23,8 @@ window.JPA_RESEARCH = [
     id: "contraband",
     title: "Estrategias anticontrabando y crimen organizado",
     shortTitle: "Anti-contraband Strategies",
-    category: "reports",
-    status: "Book and policy report",
+    category: "books",
+    status: "Book",
     year: "2023",
     authors: "EAFIT and FND",
     venue: "EAFIT & Federacion Nacional de Departamentos",
@@ -33,7 +33,9 @@ window.JPA_RESEARCH = [
     summary: "Policy-facing analysis of illicit liquor and tobacco markets and organized-crime dynamics.",
     insight: "Combines market characterization with institutional constraints to inform enforcement strategy.",
     visual: { type: "network", accent: "#7b5f23", label: "Illicit market", metric: "Policy" },
-    links: [],
+    links: [
+      { label: "Book PDF", url: "https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf" }
+    ],
     featured: false
   },
   {
