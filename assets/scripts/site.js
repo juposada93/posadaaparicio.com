@@ -1,4 +1,9 @@
 const researchItems = window.JPA_RESEARCH || [];
+const orderedResearchItems = [...researchItems].sort((a, b) => {
+  const rankDiff = (b.sortRank || 0) - (a.sortRank || 0);
+  if (rankDiff !== 0) return rankDiff;
+  return String(a.title).localeCompare(String(b.title));
+});
 
 function escapeHtml(value) {
   return String(value)
@@ -200,10 +205,10 @@ function paperVisual(type, label, metric) {
 function renderResearch() {
   document.querySelectorAll("[data-research-grid]").forEach((grid) => {
     const mode = grid.dataset.researchGrid;
-    let items = researchItems;
+    let items = orderedResearchItems;
 
     if (mode === "featured") {
-      items = researchItems.filter((item) => item.featured).slice(0, 4);
+      items = orderedResearchItems.filter((item) => item.featured).slice(0, 4);
     }
 
     grid.innerHTML = items.map((item) => paperCard(item, mode === "featured")).join("");
