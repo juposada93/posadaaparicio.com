@@ -409,6 +409,19 @@ function bibtex(item) {
   return `@techreport{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  institution = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
 }
 
+function videoEmbed(item) {
+  if (!item.video) return "";
+  const match = item.video.match(/(?:v=|youtu\.be\/)([\w-]{6,})/);
+  if (!match) return "";
+  return `<div class="paper-detail-abstract reveal is-visible">
+            <div class="section-label">Video</div>
+            <h2>Paper presentation.</h2>
+            <div class="video-embed">
+              <iframe src="https://www.youtube-nocookie.com/embed/${match[1]}" title="Video presentation: ${escapeHtml(item.shortTitle || item.title)}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
+            </div>
+          </div>`;
+}
+
 function paperPage(item) {
   const pageUrl = `${SITE_URL}${pagePath(item)}`;
   const links = linkList(item.links, item);
@@ -468,6 +481,7 @@ ${header("research")}
             <h2>Abstract.</h2>
             <p>${escapeHtml(item.abstract)}</p>
           </div>` : ""}
+          ${videoEmbed(item)}
           <div class="paper-detail-abstract reveal is-visible">
             <div class="section-label">Methods and themes</div>
             <h2>How the project is framed.</h2>

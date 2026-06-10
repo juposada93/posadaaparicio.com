@@ -64,8 +64,10 @@ window.JPA_RESEARCH = [
     insight: "Persuasion worked when identity and emotional cues aligned — messages landed hardest right after unexpected losses.",
     brief: "Can a government talk rebels into coming home? Colombia broadcast demobilization appeals during national-team football matches. Using game dates, kick-off times, and rain-induced variation in radio signal strength over 2003-2016, we estimate that family-themed messages persuaded more than 1,000 FARC fighters to demobilize, while national-unity messages had no detectable effect. Messages were most persuasive when heard during unexpected losses, when negative emotional cues made family identity salient — a mechanism we formalize in a model of identity and emotions and validate using family-specific holidays and local climate anomalies.",
     visual: { type: "signal", accent: "#2f6f5e", label: "Signal x emotion", metric: "1,000+" },
+    video: "https://www.youtube.com/watch?v=cx1D6QZw8yk",
     links: [
-      { label: "IZA", url: "https://www.iza.org/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc" }
+      { label: "IZA", url: "https://www.iza.org/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc" },
+      { label: "Video presentation", url: "https://www.youtube.com/watch?v=cx1D6QZw8yk" }
     ],
     featured: true
   },
