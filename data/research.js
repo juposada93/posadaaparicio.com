@@ -35,7 +35,7 @@ window.JPA_RESEARCH = [
     category: "books",
     sortRank: 70,
     status: "Book",
-    year: "2023",
+    year: "2022",
     authors: "Universidad EAFIT and Federación Nacional de Departamentos; consulting engagement led by Juan P. Aparicio",
     authorsFull: ["Universidad EAFIT", "Federación Nacional de Departamentos"],
     authorsAreOrgs: true,

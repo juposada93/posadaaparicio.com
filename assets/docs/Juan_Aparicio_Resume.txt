@@ -25,12 +25,12 @@ Research Scientist (Postdoctoral Researcher), Institute for Replication | Ottawa
 - Led crowd-sourced research-verification studies with 700+ analyst-participants; co-managed a portfolio spanning 2,000+ researchers across institutions.
 - Co-investigator on USD 322K in competitive grants (Sloan Foundation; Research on Research initiative, 2025).
 
-Senior Economist & Senior Data Scientist, CivicScience | Pittsburgh, USA | 2022-2024
+Senior Data Scientist & Economist, CivicScience | Pittsburgh, USA | Dec 2022 - May 2024
 - Built CivicScience's first demand-forecasting offering in R, Python, and SQL on Snowflake, drawing on a real-time survey platform with 165M+ consumer profiles; the work was productized into a commercial forecasting line.
 - Led forecasting engagements end-to-end for Fortune 500 clients including McDonald's, Target, and Bank of America, working with client stakeholders from scoping through delivery.
 - Retained post-departure as Fellow and advisor (2024-present, part-time advisory).
 
-Senior Consultant & Postdoctoral Researcher, Universidad EAFIT | Medellín, Colombia | 2022-2023
+Senior Consultant & Postdoctoral Researcher, Universidad EAFIT | Medellín, Colombia | Jul 2021 - Jan 2023
 - Led EAFIT's consulting engagement with the Federación Nacional de Departamentos on illicit liquor and cigarette markets; delivered the published evidence base for the Federación's national anti-contraband strategy.
 
 

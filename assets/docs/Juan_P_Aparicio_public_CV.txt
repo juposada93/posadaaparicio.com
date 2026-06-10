@@ -17,9 +17,9 @@ RESEARCH AND PROFESSIONAL EXPERIENCE
 
 - Research Scientist (Postdoctoral Researcher), Institute for Replication, Ottawa, Canada | 2024-present. Organizes replication games and AI Games projects on human-AI interaction and research productivity. Has led studies involving more than 700 researchers and contributed to projects involving more than 2,000; co-organized replication work that fed into publications in journals including Nature, PNAS, Psychological Science, and Nature Human Behaviour.
 - Visiting positions: Centre for the Study of Existential Risk, University of Cambridge | May 2026; Victoria University of Wellington | December 2025.
-- Fellow, CivicScience | 2024-present. Ongoing advisory role on survey-based demand forecasting.
-- Senior Economist & Senior Data Scientist, CivicScience, Pittsburgh, USA | 2022-2024. Developed demand-forecasting applications using CivicScience's real-time survey data and tested them with clients including McDonald's, Target, and Bank of America. The forecasting work later became a product line.
-- Postdoctoral Researcher & Senior Consultant, Universidad EAFIT, Medellín, Colombia | 2022-2023 (held concurrently with the final stretch of the PhD). Led EAFIT's consulting work with the Federación Nacional de Departamentos on liquor and cigarette smuggling in Colombia, resulting in the policy report listed below.
+- Senior Economic Fellow, CivicScience | May 2024-present. Ongoing part-time advisory role on survey-based demand forecasting.
+- Senior Data Scientist & Economist, CivicScience, Pittsburgh, USA | December 2022 - May 2024. Developed demand-forecasting applications using CivicScience's real-time survey data and tested them with clients including McDonald's, Target, and Bank of America. The forecasting work later became a product line.
+- Senior Consultant & Postdoctoral Researcher, Universidad EAFIT, Medellín, Colombia | 2021-2023 (Senior Consultant, July 2021 - October 2022; Postdoctoral Researcher, June 2022 - January 2023; held concurrently with the final stretch of the PhD). Led EAFIT's consulting work with the Federación Nacional de Departamentos on liquor and cigarette smuggling in Colombia, resulting in the policy report listed below.
 
 
 EDUCATION
@@ -51,7 +51,7 @@ JOURNAL COMMENTS AND REPLICATIONS
 
 BOOKS AND POLICY REPORTS
 
-- Estrategias anticontrabando y crimen organizado. EAFIT & Federación Nacional de Departamentos, 2023. Consulting engagement led by Juan P. Aparicio. https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf.
+- Estrategias anticontrabando y crimen organizado. EAFIT & Federación Nacional de Departamentos, 2022. Consulting engagement led by Juan P. Aparicio. https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf.
 
 
 WORK IN PROGRESS
