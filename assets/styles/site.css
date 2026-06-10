@@ -860,6 +860,7 @@ p {
 
 .image-panel img {
   width: 100%;
+  height: auto; /* override the height attribute so aspect-ratio rules apply */
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: 73% 48%;
