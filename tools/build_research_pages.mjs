@@ -432,17 +432,34 @@ function videoEmbed(item) {
   if (!item.video) return "";
   const match = item.video.match(/(?:v=|youtu\.be\/)([\w-]{6,})/);
   if (!match) return "";
+  const id = match[1];
+  const title = escapeHtml(`Video presentation: ${item.shortTitle || item.title}`);
+  // Click-to-load facade: the ~600KB YouTube player only loads on demand.
+  // Without JS the facade is a plain link to the video.
   return `<div class="paper-detail-abstract reveal is-visible">
             <div class="section-label">Video</div>
             <h2>Paper presentation.</h2>
-            <div class="video-embed">
-              <iframe src="https://www.youtube-nocookie.com/embed/${match[1]}" title="Video presentation: ${escapeHtml(item.shortTitle || item.title)}" loading="lazy" allowfullscreen allow="accelerometer; encrypted-media; picture-in-picture"></iframe>
+            <div class="video-embed" data-video-id="${id}" data-video-title="${title}">
+              <a class="video-facade" href="${escapeHtml(item.video)}" target="_blank" rel="noreferrer">
+                <img src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" alt="${title}" width="480" height="360" loading="lazy" decoding="async">
+                <span class="video-play" aria-hidden="true"></span>
+                <span class="visually-hidden">Play video</span>
+              </a>
             </div>
           </div>`;
 }
 
+function ogImage(item) {
+  const ogPath = `/assets/images/og/${item.id}.png`;
+  if (fs.existsSync(path.join(ROOT, ogPath))) {
+    return { url: ogPath, alt: `Paper card: ${item.title}` };
+  }
+  return { url: PORTRAIT, alt: "Portrait of Juan P. Aparicio" };
+}
+
 function paperPage(item) {
   const pageUrl = `${SITE_URL}${pagePath(item)}`;
+  const og = ogImage(item);
   const links = linkList(item.links, item);
   const doiRow = item.doi
     ? `<div><dt>DOI</dt><dd><a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(doiValue(item.doi))}</a></dd></div>`
@@ -461,12 +478,12 @@ function paperPage(item) {
     <meta property="og:description" content="${escapeHtml(item.summary)}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="${pageUrl}">
-    <meta property="og:image" content="${SITE_URL}${PORTRAIT}">
-    <meta property="og:image:alt" content="Portrait of Juan P. Aparicio">
+    <meta property="og:image" content="${SITE_URL}${og.url}">
+    <meta property="og:image:alt" content="${escapeHtml(og.alt)}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${escapeHtml(item.title)}">
     <meta name="twitter:description" content="${escapeHtml(item.summary)}">
-    <meta name="twitter:image" content="${SITE_URL}${PORTRAIT}">
+    <meta name="twitter:image" content="${SITE_URL}${og.url}">
     ${citationMeta(item)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles/site.css">

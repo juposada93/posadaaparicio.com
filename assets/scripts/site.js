@@ -304,9 +304,26 @@ function setupReveal() {
   items.forEach((item) => observer.observe(item));
 }
 
+function setupVideoFacades() {
+  document.querySelectorAll(".video-embed[data-video-id]").forEach((wrap) => {
+    const facade = wrap.querySelector(".video-facade");
+    if (!facade) return;
+    facade.addEventListener("click", (event) => {
+      event.preventDefault();
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${wrap.dataset.videoId}?autoplay=1`;
+      iframe.title = wrap.dataset.videoTitle || "Video presentation";
+      iframe.allowFullscreen = true;
+      iframe.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture";
+      wrap.replaceChildren(iframe);
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   renderResearch();
   setupFilters();
   setActiveNav();
   setupReveal();
+  setupVideoFacades();
 });

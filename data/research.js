@@ -374,7 +374,8 @@ window.JPA_RESEARCH = [
     visual: { type: "teams", accent: "#24546b", label: "Team modes", metric: "3 designs" },
     links: [
       { label: "PNAS DOI", url: "https://doi.org/10.1073/pnas.2524747123" },
-      { label: "IZA Discussion Paper", url: "https://docs.iza.org/dp17645.pdf" }
+      { label: "IZA Discussion Paper", url: "https://docs.iza.org/dp17645.pdf" },
+      { label: "Data & code (GitHub)", url: "https://github.com/I4Replication/AI-Games" }
     ],
     featured: true
   },

@@ -1537,3 +1537,45 @@ pre.bibtex {
   height: 100%;
   border: 0;
 }
+
+.video-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.video-facade img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  background: rgba(25, 24, 20, 0.82);
+  transition: background 180ms ease;
+}
+
+.video-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent var(--paper-2);
+}
+
+.video-facade:hover .video-play,
+.video-facade:focus-visible .video-play {
+  background: var(--red);
+}
