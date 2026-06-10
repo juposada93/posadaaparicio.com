@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "public-cv.md"
 OUTPUT = ROOT / "assets" / "docs" / "Juan_P_Aparicio_public_CV.pdf"
 TEXT_OUTPUT = ROOT / "assets" / "docs" / "Juan_P_Aparicio_public_CV.txt"
+DOC_TITLE = "Juan P. Aparicio - Public CV"
+DOC_SUBJECT = "Public academic CV for Juan P. Aparicio, applied economist and data scientist"
 LINK_RE = re.compile(r"\[([^\]]+)\]\(((?:https?://|mailto:)[^)]+)\)")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 LINK_COLOR = "#24546b"
@@ -209,7 +211,7 @@ def build_pdf() -> None:
     header_lines = [line.strip() for line in lines[:section_start] if line.strip()]
     name = header_lines[0][2:] if header_lines and header_lines[0].startswith("# ") else "Juan P. Aparicio"
     role = header_lines[1] if len(header_lines) > 1 else ""
-    contact_prefixes = ("Email:", "Website:", "ORCID:", "LinkedIn:", "GitHub:", "Google Scholar:")
+    contact_prefixes = ("Email:", "Location:", "Website:", "ORCID:", "LinkedIn:", "GitHub:", "Google Scholar:")
     profile_lines = [
         line for line in header_lines[2:]
         if not line.startswith(contact_prefixes)
@@ -243,9 +245,9 @@ def build_pdf() -> None:
         leftMargin=SIDE_MARGIN,
         topMargin=0.48 * inch,
         bottomMargin=0.48 * inch,
-        title="Juan P. Aparicio - Public CV",
+        title=DOC_TITLE,
         author="Juan P. Aparicio",
-        subject="Public academic CV for Juan P. Aparicio, applied economist and data scientist",
+        subject=DOC_SUBJECT,
         keywords=[
             "Juan P. Aparicio",
             "applied economics",

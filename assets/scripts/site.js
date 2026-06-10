@@ -45,7 +45,7 @@ function paperPageUrl(item) {
 function categoryLabel(category) {
   const labels = {
     published: "Published",
-    books: "Books",
+    books: "Books and reports",
     working: "Working papers",
     wip: "Work in progress"
   };
@@ -229,6 +229,7 @@ function paperVisual(type, label, metric) {
 
 function renderResearch() {
   document.querySelectorAll("[data-research-grid]").forEach((grid) => {
+    if (grid.querySelector(".paper-card")) return; // build output is canonical
     const mode = grid.dataset.researchGrid;
     let items = orderedResearchItems;
 
