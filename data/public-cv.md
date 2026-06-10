@@ -2,7 +2,7 @@
 
 Applied Economist and Data Scientist | Political Economy | Research Reproducibility
 PhD economist specializing in political economy, conflict, media, reproducibility, and applied data science.
-Methods: applied microeconomics, causal inference, survey data analysis, predictive modeling, replication audits, applied AI.
+Methods: applied microeconomics, causal inference, time-series and demand forecasting, survey data analysis, replication audits, human-AI evaluation.
 
 Email: juposada93@gmail.com
 Website: https://www.posadaaparicio.com
@@ -15,35 +15,38 @@ Google Scholar: https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en
 
 - Visiting Scholar, Centre for the Study of Existential Risk, University of Cambridge | May 2026.
 - Visiting Scholar, Victoria University of Wellington | December 2025.
-- Research Scientist (Postdoctoral Researcher), Institute for Replication, Ottawa, Canada | 2024-present. Personally organized around 10 replication games, directly spearheaded papers with more than 700 replicators, and worked on projects involving more than 2,000 replicators; contributes to papers in journals including Nature, PNAS, Psychological Science, and Nature Human Behaviour; spearheads AI Games initiatives on human-AI interaction, research productivity, and how researchers benefit from AI.
+- Research Scientist (Postdoctoral Researcher), Institute for Replication, Ottawa, Canada | 2024-present. Organizes replication games and AI Games projects on human-AI interaction and research productivity; has led papers involving more than 700 replicators and contributed to projects involving more than 2,000 replicators, including work published in Nature, PNAS, Psychological Science, and Nature Human Behaviour.
 - Fellow, CivicScience | 2024-present.
-- Senior Economist & Senior Data Scientist, CivicScience, Pittsburgh, USA | 2022-2024. Pioneered the use of CivicScience's real-time survey data for demand forecasting, drawing on a public database described by CivicScience as over 165M consumer profiles, over 6B survey responses, over 1M new responses daily, and over 13 years of contiguous history. Tested forecasting applications with Fortune 500 clients including McDonald's, Target, and Bank of America; the forecasting work later became a product line, and he remains a CivicScience fellow and advisor.
-- Postdoctoral Researcher & Senior Consultant, Universidad EAFIT, Medellin, Colombia | 2022-2023. Spearheaded EAFIT's consulting relationship with the Federacion Nacional de Departamentos on liquor and cigarette smuggling in Colombia, culminating in the policy report/book listed below.
+- Senior Economist & Senior Data Scientist, CivicScience, Pittsburgh, USA | 2022-2024. Developed demand-forecasting applications using CivicScience's real-time survey data and tested them with clients including McDonald's, Target, and Bank of America. The forecasting work later became a product line; continues as a CivicScience fellow and advisor.
+- Postdoctoral Researcher & Senior Consultant, Universidad EAFIT, Medellín, Colombia | 2022-2023. Led EAFIT's consulting work with the Federación Nacional de Departamentos on liquor and cigarette smuggling in Colombia, resulting in the policy report listed below.
 
-## Selected Publications
+## Peer-reviewed Articles
 
 - AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science. With A. Brodeur, D. Valenta, A. Marcoci, D. Mikola, B. Barbarioli, et al. **Proceedings of the National Academy of Sciences**, 123(22), e2524747123, 2026. DOI: https://doi.org/10.1073/pnas.2524747123.
-- Comment on "Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh" by Hassan et al. With Nikolai Cook, Derek Mikola, Ole Rogeberg, David Valenta, Michael Wiebe, Carl Bonander, and Abel Brodeur. **The Economic Journal**, 2026. DOI: https://doi.org/10.1093/ej/ueag040.
 - Captivating news: Media attention and FARC kidnappings. With Michael Jetter. **Journal of Economic Behavior & Organization**, 202, 69-81, 2022. DOI: https://doi.org/10.1016/j.jebo.2022.07.029.
-- Internet Demand: The Colombian Telecommunications Wholesale Sector. With John J. Garcia. **Revista de Economia del Rosario**.
+- Internet Demand: The Colombian Telecommunications Wholesale Sector. With John J. Garcia. **Revista de Economía del Rosario**.
+
+## Journal Comments and Discussion Papers
+
+- Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC. With Michael Jetter and Christopher Parsons. **IZA Discussion Paper No. 16054; job market paper**. https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc.
+- Comment on "Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh" by Hassan et al. With Nikolai Cook, Derek Mikola, Ole Rogeberg, David Valenta, Michael Wiebe, Carl Bonander, and Abel Brodeur. **The Economic Journal**, 2026. DOI: https://doi.org/10.1093/ej/ueag040.
+- A Comment on "Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh". With Lenka Fiala, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, Abel Brodeur, et al. **I4R Discussion Paper Series**, 2025. https://ideas.repec.org/p/zbw/i4rdps/241.html.
 
 ## Books and Policy Reports
 
-- Estrategias anticontrabando y crimen organizado. EAFIT & Federacion Nacional de Departamentos, 2023. https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf.
+- Estrategias anticontrabando y crimen organizado. EAFIT & Federación Nacional de Departamentos, 2023. https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf.
 
-## Working Papers and Research Pipeline
+## Working Papers and Work in Progress
 
-- Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC. With Michael Jetter and Christopher Parsons. **IZA Discussion Paper No. 16054**. https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc.
-- A Comment on "Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh". I4R Discussion Paper Series, 2025. https://ideas.repec.org/p/zbw/i4rdps/241.html.
-- The Wrong Snowball: Reintegration Signals and Demobilization in Colombia. Working paper.
-- You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict. Working paper.
+- The Wrong Snowball: Reintegration Signals and Demobilization in Colombia. With Verónica Abril. Working paper.
+- You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict. With Gustavo Canavire-Bacarreza and Eric Neumayer. Working paper.
 - Violence and Migration: Analyzing the Mujahideen. Work in progress.
 - Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model. Work in progress.
 
 ## Education
 
 - Ph.D. in Economics, University of Western Australia | 2023. Dean's list honorable mention.
-- M.Sc. in Economics, Universite Catholique de Louvain | 2018.
+- M.Sc. in Economics, Université catholique de Louvain | 2018.
 - B.S. in Economics, Universidad EAFIT | 2016. Graduated with honors.
 
 ## Grants and Awards
@@ -60,8 +63,8 @@ Google Scholar: https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en
 ## Teaching
 
 - Advanced Topics in Econometrics, Universidad EAFIT | 2025.
-- Intro Microeconomics, Universidad EIA | 2024.
-- Intro Colombian Economy, Universidad EIA | 2023.
+- Introduction to Microeconomics, Universidad EIA | 2024.
+- Introduction to the Colombian Economy, Universidad EIA | 2023.
 - Intermediate Macroeconomics, Universidad EIA | 2023.
 - Microeconomics Seminar, Universidad EAFIT | 2021-2023. Student evaluation: 4.8/5.
 - Growth and Development, Universidad EAFIT | 2022. Student evaluation: 4.7/5.
@@ -69,11 +72,11 @@ Google Scholar: https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en
 ## Supervision and Service
 
 - Supervised or mentored students at Louvain School of Economics, Universidad EIA, and Universidad EAFIT.
-- Referee service: Proceedings of the National Academy of Sciences Nexus, Journal of Productivity Analysis, Sports Economics Review, Journal of the Operational Research Society, Migration Studies, Revista de Economia del Rosario.
-- Pro-bono consulting for International Justice Mission on violence against women and children in Colombia.
+- Referee service: Proceedings of the National Academy of Sciences Nexus, Journal of Productivity Analysis, Sports Economics Review, Journal of the Operational Research Society, Migration Studies, Revista de Economía del Rosario.
+- Pro bono consulting for International Justice Mission on violence against women and children in Colombia.
 
 ## Skills
 
-- Methods: applied microeconomics, causal inference, political economy, reproducibility, survey data analysis, predictive modeling, applied AI.
+- Methods: applied microeconomics, causal inference, political economy, time-series and demand forecasting, replication audits, survey data analysis, human-AI evaluation.
 - Software: R, Python, SQL, Stata, LaTeX, Excel.
-- Languages: Spanish native; English C1; French and Portuguese basic passive comprehension with limited current speaking proficiency.
+- Languages: Spanish native; English C1; French and Portuguese basic reading comprehension with limited speaking proficiency.

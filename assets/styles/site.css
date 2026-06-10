@@ -61,8 +61,9 @@ a:hover {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(36, 84, 107, 0.55);
+  outline: 3px solid var(--blue);
   outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--paper-2);
 }
 
 p {
@@ -585,13 +586,33 @@ p {
 }
 
 .paper-authors,
-.paper-venue {
+.paper-venue,
+.paper-status {
   color: #4b463f;
   font-size: 0.93rem;
 }
 
 .paper-venue {
   color: var(--muted);
+}
+
+.paper-status {
+  color: var(--green);
+  font-weight: 780;
+}
+
+.paper-badge {
+  width: max-content;
+  max-width: 100%;
+  padding: 5px 9px;
+  border: 1px solid rgba(37, 79, 67, 0.24);
+  border-radius: 999px;
+  background: rgba(37, 79, 67, 0.1);
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 840;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .paper-doi,
@@ -609,7 +630,7 @@ p {
   color: var(--blue);
 }
 
-.paper-body p:not(.paper-authors):not(.paper-venue):not(.paper-insight):not(.paper-doi) {
+.paper-body p:not(.paper-authors):not(.paper-venue):not(.paper-status):not(.paper-insight):not(.paper-doi) {
   color: #37332d;
 }
 
@@ -712,6 +733,88 @@ p {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 250, 241, 0.86);
+}
+
+.paper-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(300px, 0.28fr);
+  gap: clamp(28px, 5vw, 56px);
+  align-items: start;
+}
+
+.paper-detail-main,
+.paper-detail-side {
+  display: grid;
+  gap: 22px;
+}
+
+.paper-detail-side {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.84);
+}
+
+.paper-detail-meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.paper-detail-meta div {
+  display: grid;
+  gap: 2px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.paper-detail-meta div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.paper-detail-meta dt {
+  color: var(--green);
+  font-size: 0.73rem;
+  font-weight: 840;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.paper-detail-meta dd {
+  min-width: 0;
+  margin: 0;
+  color: #403b34;
+}
+
+.paper-detail-meta a {
+  color: var(--blue);
+  overflow-wrap: anywhere;
+}
+
+.paper-detail-abstract {
+  display: grid;
+  gap: 14px;
+}
+
+.paper-detail-abstract h2,
+.paper-detail-side h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 2.2vw, 2.15rem);
+  font-weight: 540;
+  line-height: 1.12;
+}
+
+.paper-detail-abstract p,
+.paper-detail-side p {
+  color: #403b34;
+}
+
+.paper-detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
 }
 
 .research-static-fallback h2 {
@@ -1222,12 +1325,17 @@ blockquote cite {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+}
+
+.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity 520ms ease, transform 520ms ease;
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1283,7 +1391,8 @@ blockquote cite {
   .theme-grid,
   .quote-grid,
   .cv-paper-columns,
-  .contact-grid {
+  .contact-grid,
+  .paper-detail {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1301,13 +1410,34 @@ blockquote cite {
     width: calc(100vw - 24px);
     max-width: var(--max);
     min-height: 0;
-    padding: 12px 0;
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 10px 0;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    min-height: 34px;
+    padding-right: 10px;
+    font-size: 1.25rem;
+  }
+
+  .brand-role {
+    display: none;
   }
 
   .site-nav {
-    width: 100%;
+    width: auto;
+    flex: 1 1 100%;
     justify-content: flex-start;
   }
 
@@ -1372,7 +1502,8 @@ blockquote cite {
   .theme-grid,
   .quote-grid,
   .cv-paper-columns,
-  .contact-grid {
+  .contact-grid,
+  .paper-detail {
     grid-template-columns: 1fr;
   }
 

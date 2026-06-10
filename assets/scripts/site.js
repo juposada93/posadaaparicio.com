@@ -1,3 +1,5 @@
+document.documentElement.classList.add("js");
+
 const researchItems = window.JPA_RESEARCH || [];
 const orderedResearchItems = [...researchItems].sort((a, b) => {
   const rankDiff = (b.sortRank || 0) - (a.sortRank || 0);
@@ -36,6 +38,10 @@ function primaryLink(item) {
   return item.links.find((link) => /doi|journal|pnas|economic/i.test(link.label)) || item.links[0];
 }
 
+function paperPageUrl(item) {
+  return item.detailUrl || `/papers/${encodeURIComponent(item.id)}.html`;
+}
+
 function categoryLabel(category) {
   const labels = {
     published: "Published",
@@ -49,13 +55,12 @@ function categoryLabel(category) {
 
 function paperCard(item, compact = false) {
   const title = escapeHtml(compact ? item.shortTitle : item.title);
-  const link = primaryLink(item);
-  const titleMarkup = link
-    ? `<a class="paper-title-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${title}</a>`
-    : title;
+  const titleMarkup = `<a class="paper-title-link" href="${escapeHtml(paperPageUrl(item))}">${title}</a>`;
   const doiMarkup = item.doi
-    ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(item.doi)}</a></p>`
+    ? `<p class="paper-doi">DOI: ${escapeHtml(item.doi)}</p>`
     : "";
+  const statusMarkup = `<p class="paper-status">${escapeHtml(item.status)}</p>`;
+  const badgeMarkup = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
 
   return `
     <article class="paper-card reveal" data-category="${escapeHtml(item.category)}">
@@ -68,8 +73,10 @@ function paperCard(item, compact = false) {
           <span>${escapeHtml(item.year)}</span>
         </div>
         <h3>${titleMarkup}</h3>
+        ${badgeMarkup}
         <p class="paper-authors">${escapeHtml(item.authors)}</p>
         <p class="paper-venue">${escapeHtml(item.venue)}</p>
+        ${statusMarkup}
         ${doiMarkup}
         <p>${escapeHtml(item.summary)}</p>
         ${compact ? "" : `<p class="paper-insight">${escapeHtml(item.insight)}</p>`}
@@ -83,7 +90,7 @@ function paperCard(item, compact = false) {
 function paperVisual(type, label, metric) {
   const safeLabel = escapeHtml(label);
   const safeMetric = escapeHtml(metric);
-  const common = `viewBox="0 0 320 190" role="img" aria-label="${safeLabel} paper infographic"`;
+  const common = `viewBox="0 0 320 190" aria-hidden="true" focusable="false"`;
   const caption = `<text x="22" y="166" class="viz-label">${safeLabel}</text><text x="230" y="166" class="viz-metric">${safeMetric}</text>`;
 
   const visuals = {

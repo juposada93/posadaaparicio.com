@@ -245,6 +245,16 @@ def build_pdf() -> None:
         bottomMargin=0.48 * inch,
         title="Juan P. Aparicio - Public CV",
         author="Juan P. Aparicio",
+        subject="Public academic CV for Juan P. Aparicio, applied economist and data scientist",
+        keywords=[
+            "Juan P. Aparicio",
+            "applied economics",
+            "political economy",
+            "conflict",
+            "research reproducibility",
+            "data science",
+            "human-AI evaluation",
+        ],
     )
     doc.build(story)
 
