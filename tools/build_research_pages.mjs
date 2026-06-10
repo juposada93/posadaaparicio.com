@@ -521,6 +521,7 @@ function writeSitemap(items) {
     "/contact.html",
     "/assets/docs/Juan_P_Aparicio_public_CV.pdf",
     "/assets/docs/Juan_P_Aparicio_public_CV.txt",
+    "/assets/docs/Juan_Aparicio_Resume.pdf",
     ...items.map(pagePath),
   ];
   const body = urls
