@@ -3,21 +3,21 @@ import re
 from html import escape
 
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_LEFT, TA_RIGHT
+from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
+from reportlab.platypus import HRFlowable, Paragraph, SimpleDocTemplate
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "data" / "public-cv.md"
 OUTPUT = ROOT / "assets" / "docs" / "Juan_P_Aparicio_public_CV.pdf"
+TEXT_OUTPUT = ROOT / "assets" / "docs" / "Juan_P_Aparicio_public_CV.txt"
 LINK_RE = re.compile(r"\[([^\]]+)\]\(((?:https?://|mailto:)[^)]+)\)")
 BOLD_RE = re.compile(r"\*\*([^*]+)\*\*")
 LINK_COLOR = "#24546b"
 SIDE_MARGIN = 0.44 * inch
-COMPACT_SECTIONS = {"Teaching", "Grants and Awards", "Skills"}
 
 
 def bold_markup(text: str) -> str:
@@ -44,6 +44,33 @@ def inline_markup(text: str) -> str:
     return "".join(pieces)
 
 
+def plain_inline(text: str) -> str:
+    text = BOLD_RE.sub(r"\1", text)
+    return LINK_RE.sub(lambda match: f"{match.group(1)} ({match.group(2)})", text)
+
+
+def build_text(lines: list[str]) -> None:
+    output = []
+    for line in lines:
+        raw = line.strip()
+        if not raw:
+            output.append("")
+            continue
+        if raw.startswith("# "):
+            output.append(raw[2:])
+            continue
+        if raw.startswith("## "):
+            output.extend(["", raw[3:].upper()])
+            continue
+        if raw.startswith("- "):
+            output.append("- " + plain_inline(raw[2:]))
+            continue
+        output.append(plain_inline(raw))
+
+    TEXT_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    TEXT_OUTPUT.write_text("\n".join(output).strip() + "\n", encoding="utf-8")
+
+
 def add_section_heading(story: list, title: str, styles) -> None:
     story.append(Paragraph(inline_markup(title).upper(), styles["Section"]))
     story.append(
@@ -54,30 +81,6 @@ def add_section_heading(story: list, title: str, styles) -> None:
             spaceBefore=0,
             spaceAfter=4,
         )
-    )
-
-
-def compact_table(items: list[str], styles, available_width: float) -> Table:
-    rows = []
-    for index in range(0, len(items), 2):
-        first = Paragraph("- " + inline_markup(items[index]), styles["BulletCompact"])
-        second = ""
-        if index + 1 < len(items):
-            second = Paragraph("- " + inline_markup(items[index + 1]), styles["BulletCompact"])
-        rows.append([first, second])
-
-    return Table(
-        rows,
-        colWidths=[available_width * 0.49, available_width * 0.49],
-        style=TableStyle(
-            [
-                ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                ("RIGHTPADDING", (0, 0), (-1, -1), 8),
-                ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
-            ]
-        ),
     )
 
 
@@ -136,7 +139,7 @@ def build_pdf() -> None:
             fontSize=8.8,
             leading=11.4,
             textColor=colors.HexColor("#3d3932"),
-            alignment=TA_RIGHT,
+            alignment=TA_LEFT,
             spaceAfter=2.3,
         )
     )
@@ -201,58 +204,31 @@ def build_pdf() -> None:
     )
 
     lines = SOURCE.read_text(encoding="utf-8").splitlines()
+    build_text(lines)
     section_start = next(i for i, line in enumerate(lines) if line.startswith("## "))
     header_lines = [line.strip() for line in lines[:section_start] if line.strip()]
     name = header_lines[0][2:] if header_lines and header_lines[0].startswith("# ") else "Juan P. Aparicio"
     role = header_lines[1] if len(header_lines) > 1 else ""
+    contact_prefixes = ("Email:", "Website:", "ORCID:", "LinkedIn:", "GitHub:", "Google Scholar:")
     profile_lines = [
         line for line in header_lines[2:]
-        if not line.startswith(("Email:", "Website:", "Google Scholar:"))
+        if not line.startswith(contact_prefixes)
     ]
     contact_lines = [
         line for line in header_lines[2:]
-        if line.startswith(("Email:", "Website:", "Google Scholar:"))
+        if line.startswith(contact_prefixes)
     ]
-    available_width = letter[0] - (2 * SIDE_MARGIN)
-
     story = [
-        Table(
-            [
-                [
-                    [
-                        Paragraph(inline_markup(name), styles["Name"]),
-                        Paragraph(inline_markup(role), styles["Role"]),
-                        *[Paragraph(inline_markup(item), styles["Profile"]) for item in profile_lines],
-                    ],
-                    [Paragraph(inline_markup(item), styles["Contact"]) for item in contact_lines],
-                ]
-            ],
-            colWidths=[available_width * 0.72, available_width * 0.28],
-            style=TableStyle(
-                [
-                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
-                    ("LEFTPADDING", (0, 0), (-1, -1), 0),
-                    ("RIGHTPADDING", (0, 0), (-1, -1), 0),
-                    ("TOPPADDING", (0, 0), (-1, -1), 0),
-                    ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
-                ]
-            ),
-        ),
+        Paragraph(inline_markup(name), styles["Name"]),
+        Paragraph(inline_markup(role), styles["Role"]),
+        *[Paragraph(inline_markup(item), styles["Profile"]) for item in profile_lines],
+        *[Paragraph(inline_markup(item), styles["Contact"]) for item in contact_lines],
         HRFlowable(width="100%", thickness=0.65, color=colors.HexColor("#d2c8b9"), spaceBefore=4, spaceAfter=7),
     ]
 
     for section in parse_sections(lines, section_start):
         add_section_heading(story, section["title"], styles)
         items = section["items"]
-        if (
-            section["title"] in COMPACT_SECTIONS
-            and len(items) > 1
-            and all(kind == "bullet" for kind, _ in items)
-        ):
-            story.append(compact_table([text for _, text in items], styles, available_width))
-            story.append(Spacer(1, 4))
-            continue
-
         for kind, text in items:
             if kind == "bullet":
                 story.append(Paragraph("- " + inline_markup(text), styles["BulletClean"]))

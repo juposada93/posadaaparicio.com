@@ -2,17 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.posadaaparicio.com/</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
   <url>
     <loc>https://www.posadaaparicio.com/research.html</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
   <url>
     <loc>https://www.posadaaparicio.com/teaching.html</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
   <url>
     <loc>https://www.posadaaparicio.com/cv.html</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
   <url>
     <loc>https://www.posadaaparicio.com/contact.html</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.posadaaparicio.com/assets/docs/Juan_P_Aparicio_public_CV.pdf</loc>
+    <lastmod>2026-06-09</lastmod>
+  </url>
+  <url>
+    <loc>https://www.posadaaparicio.com/assets/docs/Juan_P_Aparicio_public_CV.txt</loc>
+    <lastmod>2026-06-09</lastmod>
   </url>
 </urlset>

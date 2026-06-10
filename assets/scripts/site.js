@@ -28,6 +28,14 @@ function tags(values) {
   return values.map((value) => `<span class="tag">${escapeHtml(value)}</span>`).join("");
 }
 
+function primaryLink(item) {
+  if (!item.links || item.links.length === 0) {
+    return null;
+  }
+
+  return item.links.find((link) => /doi|journal|pnas|economic/i.test(link.label)) || item.links[0];
+}
+
 function categoryLabel(category) {
   const labels = {
     published: "Published",
@@ -40,6 +48,15 @@ function categoryLabel(category) {
 }
 
 function paperCard(item, compact = false) {
+  const title = escapeHtml(compact ? item.shortTitle : item.title);
+  const link = primaryLink(item);
+  const titleMarkup = link
+    ? `<a class="paper-title-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${title}</a>`
+    : title;
+  const doiMarkup = item.doi
+    ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(item.doi)}</a></p>`
+    : "";
+
   return `
     <article class="paper-card reveal" data-category="${escapeHtml(item.category)}">
       <div class="paper-visual" style="--paper-accent: ${escapeHtml(item.visual.accent)}">
@@ -50,9 +67,10 @@ function paperCard(item, compact = false) {
           <span>${escapeHtml(categoryLabel(item.category))}</span>
           <span>${escapeHtml(item.year)}</span>
         </div>
-        <h3>${escapeHtml(compact ? item.shortTitle : item.title)}</h3>
+        <h3>${titleMarkup}</h3>
         <p class="paper-authors">${escapeHtml(item.authors)}</p>
         <p class="paper-venue">${escapeHtml(item.venue)}</p>
+        ${doiMarkup}
         <p>${escapeHtml(item.summary)}</p>
         ${compact ? "" : `<p class="paper-insight">${escapeHtml(item.insight)}</p>`}
         <div class="tag-row">${tags(item.themes)}</div>
@@ -225,12 +243,25 @@ function setupFilters() {
     if (!button) return;
 
     const filter = button.dataset.filter;
-    filterWrap.querySelectorAll("button").forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
-
-    grid.querySelectorAll(".paper-card").forEach((card) => {
-      card.hidden = filter !== "all" && card.dataset.category !== filter;
+    filterWrap.querySelectorAll("button").forEach((item) => {
+      item.classList.remove("is-active");
+      item.setAttribute("aria-pressed", "false");
     });
+    button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
+
+    let visibleCount = 0;
+    grid.querySelectorAll(".paper-card").forEach((card) => {
+      const isVisible = filter === "all" || card.dataset.category === filter;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+
+    const status = filterWrap.querySelector("[data-filter-status]");
+    if (status) {
+      const label = filter === "all" ? "all research items" : categoryLabel(filter).toLowerCase();
+      status.textContent = `Showing ${visibleCount} ${label}.`;
+    }
   });
 }
 

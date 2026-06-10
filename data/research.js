@@ -9,13 +9,14 @@ window.JPA_RESEARCH = [
     year: "2022",
     authors: "With Michael Jetter",
     venue: "Journal of Economic Behavior & Organization, 202, 69-81",
+    doi: "https://doi.org/10.1016/j.jebo.2022.07.029",
     themes: ["Conflict", "Media", "Political economy"],
     methods: ["Instrumental variables", "Daily event data", "Text archives"],
     summary: "Studies how news about a proposed prisoner exchange shifted FARC kidnapping decisions in Colombia.",
     insight: "Agenda-setting can change the strategic value of violence, moving conflict actors across target types.",
     visual: { type: "news", accent: "#9c3f2f", label: "AH news", metric: "2002-2008" },
     links: [
-      { label: "Journal of Economic Behavior & Organization", url: "https://doi.org/10.1016/j.jebo.2022.07.029" },
+      { label: "Journal DOI", url: "https://doi.org/10.1016/j.jebo.2022.07.029" },
       { label: "IZA", url: "https://www.iza.org/publications/dp/13834/captivating-news-in-colombia" }
     ],
     featured: true
@@ -70,13 +71,14 @@ window.JPA_RESEARCH = [
     year: "2026",
     authors: "With A. Brodeur, D. Valenta, A. Marcoci, D. Mikola, B. Barbarioli, et al.",
     venue: "Proceedings of the National Academy of Sciences, 123(22), e2524747123",
+    doi: "https://doi.org/10.1073/pnas.2524747123",
     themes: ["Applied AI", "Reproducibility", "Meta-science"],
     methods: ["Team experiment", "Replication audit", "AI evaluation"],
     summary: "Compares how human, AI-assisted, and AI-led teams assess reproducibility in quantitative social science.",
     insight: "Turns the question of AI reliability into a measurable team-design problem.",
     visual: { type: "teams", accent: "#24546b", label: "Team modes", metric: "3 designs" },
     links: [
-      { label: "PNAS", url: "https://doi.org/10.1073/pnas.2524747123" },
+      { label: "PNAS DOI", url: "https://doi.org/10.1073/pnas.2524747123" },
       { label: "IZA Discussion Paper", url: "https://docs.iza.org/dp17645.pdf" }
     ],
     featured: true
@@ -91,13 +93,14 @@ window.JPA_RESEARCH = [
     year: "2026",
     authors: "With Nikolai Cook, Derek Mikola, Ole Rogeberg, David Valenta, Michael Wiebe, Carl Bonander, and Abel Brodeur",
     venue: "The Economic Journal, 2026",
+    doi: "https://doi.org/10.1093/ej/ueag040",
     themes: ["Reproducibility", "Education", "RCTs"],
     methods: ["Computational reproducibility", "Replication package audit", "Robustness checks"],
     summary: "Assesses the reproducibility of a field experiment on telementoring and homeschooling during school closures.",
     insight: "Makes replication review legible as an input into the publication record.",
     visual: { type: "codeAudit", accent: "#5f6f2f", label: "Checked code", metric: "2026" },
     links: [
-      { label: "The Economic Journal", url: "https://doi.org/10.1093/ej/ueag040" }
+      { label: "Economic Journal DOI", url: "https://doi.org/10.1093/ej/ueag040" }
     ],
     featured: false
   },

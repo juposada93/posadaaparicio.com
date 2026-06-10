@@ -5,13 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Research | Juan P. Aparicio</title>
     <meta name="description" content="Research by Juan P. Aparicio on conflict, media, reproducibility, applied AI, education, and political economy.">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/styles/site.css">
+    <link rel="canonical" href="https://www.posadaaparicio.com/research.html">
+    <meta property="og:title" content="Research | Juan P. Aparicio">
+    <meta property="og:description" content="Publications, working papers, policy reports, and projects by Juan P. Aparicio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.posadaaparicio.com/research.html">
+    <meta property="og:image" content="https://www.posadaaparicio.com/assets/images/juan-aparicio-editorial-portrait.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Research | Juan P. Aparicio">
+    <meta name="twitter:description" content="Publications, working papers, policy reports, and projects by Juan P. Aparicio.">
+    <meta name="twitter:image" content="https://www.posadaaparicio.com/assets/images/juan-aparicio-editorial-portrait.jpg">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/styles/site.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Research by Juan P. Aparicio",
+        "itemListElement": [
+          {
+            "@type": "ScholarlyArticle",
+            "position": 1,
+            "name": "AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science",
+            "author": { "@type": "Person", "name": "Juan P. Aparicio" },
+            "isPartOf": { "@type": "Periodical", "name": "Proceedings of the National Academy of Sciences" },
+            "datePublished": "2026",
+            "identifier": "https://doi.org/10.1073/pnas.2524747123",
+            "url": "https://doi.org/10.1073/pnas.2524747123"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "position": 2,
+            "name": "Comment on Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh",
+            "author": { "@type": "Person", "name": "Juan P. Aparicio" },
+            "isPartOf": { "@type": "Periodical", "name": "The Economic Journal" },
+            "datePublished": "2026",
+            "identifier": "https://doi.org/10.1093/ej/ueag040",
+            "url": "https://doi.org/10.1093/ej/ueag040"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "position": 3,
+            "name": "Captivating news: Media attention and FARC kidnappings",
+            "author": { "@type": "Person", "name": "Juan P. Aparicio" },
+            "isPartOf": { "@type": "Periodical", "name": "Journal of Economic Behavior & Organization" },
+            "datePublished": "2022",
+            "identifier": "https://doi.org/10.1016/j.jebo.2022.07.029",
+            "url": "https://doi.org/10.1016/j.jebo.2022.07.029"
+          }
+        ]
+      }
+    </script>
   </head>
   <body data-page="research">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <div class="nav-wrap">
-        <a class="brand" href="index.html" aria-label="Juan P. Aparicio home">
+        <a class="brand" href="/" aria-label="Juan P. Aparicio home">
           <span class="brand-mark">JPA</span>
           <span class="brand-text">
             <span class="brand-name">Juan P. Aparicio</span>
@@ -19,41 +69,64 @@
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
-          <a href="index.html" data-nav="home">Home</a>
-          <a href="research.html" data-nav="research">Research</a>
-          <a href="teaching.html" data-nav="teaching">Teaching</a>
-          <a href="cv.html" data-nav="cv">CV</a>
-          <a href="contact.html" data-nav="contact">Contact</a>
+          <a href="/" data-nav="home">Home</a>
+          <a href="/research.html" data-nav="research">Research</a>
+          <a href="/teaching.html" data-nav="teaching">Teaching</a>
+          <a href="/cv.html" data-nav="cv">CV</a>
+          <a href="/contact.html" data-nav="contact">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="page-hero">
         <div class="eyebrow">Research</div>
-        <h1>Research on conflict, information, and credible evidence.</h1>
+        <h1>Juan P. Aparicio research on conflict, information, and credible evidence.</h1>
         <p>
           Publications, books, working papers, and projects in progress from the current CV, with public links included where available.
         </p>
       </section>
 
-      <section class="section">
-        <div class="filters reveal" data-filters>
-          <div class="filter-row" aria-label="Research filters">
-            <button class="is-active" type="button" data-filter="all">All</button>
-            <button type="button" data-filter="published">Published</button>
-            <button type="button" data-filter="books">Books</button>
-            <button type="button" data-filter="working">Working papers</button>
-            <button type="button" data-filter="wip">Work in progress</button>
+      <section class="section" aria-labelledby="research-list-heading">
+        <div class="section-header reveal">
+          <div class="section-label">Research list</div>
+          <div>
+            <h2 id="research-list-heading">Peer-reviewed publications, reports, working papers, and current projects.</h2>
+            <p>Use the filters to narrow the list by publication stage. DOI links are shown where available.</p>
           </div>
         </div>
+        <div class="filters reveal" data-filters>
+          <div class="filter-row" aria-label="Research filters">
+            <button class="is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" data-filter="published" aria-pressed="false">Published</button>
+            <button type="button" data-filter="books" aria-pressed="false">Books and reports</button>
+            <button type="button" data-filter="working" aria-pressed="false">Working papers</button>
+            <button type="button" data-filter="wip" aria-pressed="false">Work in progress</button>
+          </div>
+          <p class="visually-hidden" aria-live="polite" data-filter-status>Showing all research items.</p>
+        </div>
         <div class="paper-grid all" data-research-grid="all"></div>
+        <noscript>
+          <section class="research-static-fallback" aria-labelledby="static-research-heading">
+            <h2 id="static-research-heading">Research list</h2>
+            <ol>
+              <li><a href="https://doi.org/10.1073/pnas.2524747123">AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science</a>. Proceedings of the National Academy of Sciences, 123(22), e2524747123, 2026. DOI: https://doi.org/10.1073/pnas.2524747123.</li>
+              <li><a href="https://doi.org/10.1093/ej/ueag040">Comment on "Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh" by Hassan et al.</a>. The Economic Journal, 2026. DOI: https://doi.org/10.1093/ej/ueag040.</li>
+              <li><a href="https://doi.org/10.1016/j.jebo.2022.07.029">Captivating news: Media attention and FARC kidnappings</a>. Journal of Economic Behavior & Organization, 202, 69-81, 2022. DOI: https://doi.org/10.1016/j.jebo.2022.07.029.</li>
+              <li><a href="https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf">Estrategias anticontrabando y crimen organizado</a>. EAFIT & Federacion Nacional de Departamentos, 2023.</li>
+              <li><a href="https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc">Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC</a>. IZA Discussion Paper No. 16054.</li>
+              <li><a href="https://ideas.repec.org/p/zbw/i4rdps/241.html">A Comment on "Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh"</a>. I4R Discussion Paper Series, 2025.</li>
+              <li>The Wrong Snowball: Reintegration Signals and Demobilization in Colombia. Working paper.</li>
+              <li>You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict. Working paper.</li>
+            </ol>
+          </section>
+        </noscript>
       </section>
 
-      <section class="section split split-media-wide">
+      <section class="section split split-media-wide" aria-labelledby="research-style-heading">
         <div class="text-panel reveal">
           <div class="section-label">Research style</div>
-          <h2>Applied questions, transparent workflows.</h2>
+          <h2 id="research-style-heading">Applied questions, transparent workflows.</h2>
           <p>
             Across projects, the common thread is a concern for how social and political actors react to information. The empirical work usually connects high-frequency administrative or event data with quasi-experimental strategies, while the reproducibility work asks how research claims can be checked at scale.
           </p>
@@ -62,7 +135,7 @@
           </p>
         </div>
         <figure class="image-panel image-panel-landscape reveal">
-          <img src="assets/images/talk.jpg" alt="Juan P. Aparicio speaking at a research event">
+          <img src="/assets/images/talk.jpg" alt="Juan P. Aparicio speaking at a research event">
         </figure>
       </section>
     </main>
@@ -70,11 +143,11 @@
     <footer class="footer">
       <div class="footer-inner">
         <span>Juan P. Aparicio</span>
-        <span><a href="mailto:juposada93@gmail.com">juposada93@gmail.com</a> - <a href="https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a></span>
+        <span><a href="mailto:juposada93@gmail.com">juposada93@gmail.com</a> - <a href="https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en" target="_blank" rel="me noreferrer">Scholar</a> - <a href="https://orcid.org/0000-0001-5887-2440" target="_blank" rel="me noreferrer">ORCID</a> - <a href="https://github.com/juposada93" target="_blank" rel="me noreferrer">GitHub</a> - <a href="https://www.linkedin.com/in/juan-pablo-posada-aparicio/" target="_blank" rel="me noreferrer">LinkedIn</a></span>
       </div>
     </footer>
 
-    <script src="data/research.js"></script>
-    <script src="assets/scripts/site.js"></script>
+    <script src="/data/research.js"></script>
+    <script src="/assets/scripts/site.js"></script>
   </body>
 </html>
