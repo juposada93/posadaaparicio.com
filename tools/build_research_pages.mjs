@@ -224,7 +224,9 @@ function staticVisual(item) {
 
 function paperCard(item, compact = false) {
   const title = escapeHtml(compact ? item.shortTitle : item.title);
-  const doiMarkup = item.doi ? `<p class="paper-doi">DOI: ${escapeHtml(item.doi)}</p>` : "";
+  const doiMarkup = item.doi
+    ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(doiValue(item.doi))}</a></p>`
+    : "";
   const badgeMarkup = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
   const insightMarkup = compact ? "" : `<p class="paper-insight">${escapeHtml(item.insight)}</p>`;
   return `
@@ -304,7 +306,9 @@ function researchItemList(items) {
         "@type": item.category === "books" ? "Book" : "ScholarlyArticle",
         "@id": `${SITE_URL}${pagePath(item)}#article`,
         name: item.title,
-        author: authorObjects(item),
+        // Cap the roster in list context; the full author list lives in the
+        // paper page's citation_author meta tags, which Scholar reads.
+        author: authorObjects(item).slice(0, 10),
         datePublished: item.year,
         isPartOf: item.venue,
         identifier: item.doi || undefined,
@@ -327,6 +331,10 @@ function replaceResearchJsonLd(items) {
 }
 
 function citationMeta(item) {
+  // Scholar inclusion guidelines: only emit citation_* tags for items with a
+  // public full text (DOI or link); skip work in progress entirely.
+  if (item.category === "wip") return "";
+  if (!item.doi && (!item.links || item.links.length === 0)) return "";
   const authors = item.authorsFull && item.authorsFull.length > 0 ? item.authorsFull : ["Juan P. Aparicio"];
   const pdfLink = (item.links || []).find((link) => /\.pdf(?:$|\?)/i.test(link.url));
   const lines = [
@@ -336,7 +344,15 @@ function citationMeta(item) {
     `<meta name="citation_language" content="en">`,
     `<meta name="citation_abstract_html_url" content="${SITE_URL}${pagePath(item)}">`,
   ];
-  if (item.venue) lines.push(`<meta name="citation_journal_title" content="${escapeHtml(item.venue)}">`);
+  if (item.category === "published" && item.venueJournal) {
+    lines.push(`<meta name="citation_journal_title" content="${escapeHtml(item.venueJournal)}">`);
+    if (item.venueVolume) lines.push(`<meta name="citation_volume" content="${escapeHtml(item.venueVolume)}">`);
+    if (item.venueIssue) lines.push(`<meta name="citation_issue" content="${escapeHtml(item.venueIssue)}">`);
+    if (item.venueFirstPage) lines.push(`<meta name="citation_firstpage" content="${escapeHtml(item.venueFirstPage)}">`);
+    if (item.venueLastPage) lines.push(`<meta name="citation_lastpage" content="${escapeHtml(item.venueLastPage)}">`);
+  } else if (item.venue && item.venue !== "Working paper") {
+    lines.push(`<meta name="citation_technical_report_institution" content="${escapeHtml(item.venue)}">`);
+  }
   if (item.doi) lines.push(`<meta name="citation_doi" content="${escapeHtml(doiValue(item.doi))}">`);
   if (pdfLink) lines.push(`<meta name="citation_pdf_url" content="${escapeHtml(absoluteUrl(pdfLink.url))}">`);
   return lines.join("\n    ");
@@ -351,7 +367,7 @@ function articleJsonLd(item) {
     name: item.title,
     headline: item.title,
     description: item.summary,
-    author: authorObjects(item),
+    author: authorObjects(item).slice(0, 10),
     datePublished: item.year,
     isPartOf: item.venue,
     about: item.themes,
@@ -405,6 +421,9 @@ function bibtex(item) {
   }
   if (item.category === "books") {
     return `@book{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  publisher = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
+  }
+  if (!item.venue || item.venue === "Working paper") {
+    return `@unpublished{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  note = {Working paper; draft available on request},\n  year = {${item.year}}${doi}${url}\n}`;
   }
   return `@techreport{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  institution = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
 }
@@ -511,8 +530,7 @@ ${header("research")}
 
 ${footer()}
 
-    <script src="/data/research.js"></script>
-    <script src="/assets/scripts/site.js"></script>
+    <script src="/assets/scripts/site.js" defer></script>
   </body>
 </html>
 `;

@@ -57,7 +57,7 @@ function paperCard(item, compact = false) {
   const title = escapeHtml(compact ? item.shortTitle : item.title);
   const titleMarkup = `<a class="paper-title-link" href="${escapeHtml(paperPageUrl(item))}">${title}</a>`;
   const doiMarkup = item.doi
-    ? `<p class="paper-doi">DOI: ${escapeHtml(item.doi)}</p>`
+    ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(item.doi.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, ""))}</a></p>`
     : "";
   const statusMarkup = `<p class="paper-status">${escapeHtml(item.status)}</p>`;
   const badgeMarkup = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
