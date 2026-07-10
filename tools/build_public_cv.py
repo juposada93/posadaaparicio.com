@@ -165,8 +165,8 @@ def build_pdf() -> None:
             fontSize=10.6,
             leading=12.4,
             textColor=colors.HexColor("#254f43"),
-            spaceBefore=12,
-            spaceAfter=4,
+            spaceBefore=9,
+            spaceAfter=3,
         )
     )
     styles.add(
@@ -175,10 +175,10 @@ def build_pdf() -> None:
             parent=styles["BodyText"],
             fontName="Helvetica",
             fontSize=8.25,
-            leading=10.65,
+            leading=10.45,
             leftIndent=14,
             firstLineIndent=-8,
-            spaceAfter=3.25,
+            spaceAfter=2.75,
             textColor=colors.HexColor("#26231f"),
         )
     )
@@ -243,8 +243,8 @@ def build_pdf() -> None:
         pagesize=letter,
         rightMargin=SIDE_MARGIN,
         leftMargin=SIDE_MARGIN,
-        topMargin=0.48 * inch,
-        bottomMargin=0.48 * inch,
+        topMargin=0.42 * inch,
+        bottomMargin=0.36 * inch,
         title=DOC_TITLE,
         author="Juan P. Aparicio",
         subject=DOC_SUBJECT,

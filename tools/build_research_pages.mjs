@@ -59,6 +59,9 @@ function primaryLink(item) {
 }
 
 function linkList(links, fallbackItem = null) {
+  if (fallbackItem?.privateDraft) {
+    return `<span class="paper-link muted">Draft not publicly circulated</span>`;
+  }
   if (!links || links.length === 0) {
     if (!fallbackItem) return "";
     const subject = encodeURIComponent(`Draft request: ${fallbackItem.title}`);
@@ -248,7 +251,7 @@ function paperCard(item, compact = false) {
               <p>${escapeHtml(item.summary)}</p>
               ${insightMarkup}
               <div class="tag-row">${tags(item.themes)}</div>
-              <div class="paper-links">${linkList(item.links)}</div>
+              <div class="paper-links">${item.privateDraft ? linkList(item.links, item) : linkList(item.links)}</div>
             </div>
           </article>`;
 }
@@ -298,7 +301,9 @@ function researchItemList(items) {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "Research by Juan P. Aparicio",
-    itemListElement: items.map((item, index) => ({
+    // Restricted drafts appear in the visible research list but are omitted
+    // from machine-readable metadata until their author lists are final.
+    itemListElement: items.filter((item) => !item.privateDraft).map((item, index) => ({
       "@type": "ListItem",
       position: index + 1,
       url: `${SITE_URL}${pagePath(item)}`,
@@ -333,7 +338,7 @@ function replaceResearchJsonLd(items) {
 function citationMeta(item) {
   // Scholar inclusion guidelines: only emit citation_* tags for items with a
   // public full text (DOI or link); skip work in progress entirely.
-  if (item.category === "wip") return "";
+  if (item.category === "wip" || item.privateDraft) return "";
   if (!item.doi && (!item.links || item.links.length === 0)) return "";
   const authors = item.authorsFull && item.authorsFull.length > 0 ? item.authorsFull : ["Juan P. Aparicio"];
   const pdfLink = (item.links || []).find((link) => /\.pdf(?:$|\?)/i.test(link.url));
@@ -359,6 +364,7 @@ function citationMeta(item) {
 }
 
 function articleJsonLd(item) {
+  if (item.privateDraft) return null;
   const link = primaryLink(item);
   return {
     "@context": "https://schema.org",
@@ -409,7 +415,7 @@ function footer() {
 }
 
 function bibtex(item) {
-  if (item.category === "wip") return "";
+  if (item.category === "wip" || item.privateDraft) return "";
   const authors = item.authorsFull && item.authorsFull.length > 0 ? item.authorsFull : ["Juan P. Aparicio"];
   const authorField = authors.length > 10 ? `${authors.slice(0, 6).join(" and ")} and others` : authors.join(" and ");
   const key = `aparicio${item.year}${item.id.replace(/-.*$/, "")}`;
@@ -487,7 +493,7 @@ function paperPage(item) {
     ${citationMeta(item)}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/styles/site.css">
-    ${jsonLdScript(articleJsonLd(item))}
+    ${articleJsonLd(item) ? jsonLdScript(articleJsonLd(item)) : ""}
   </head>
   <body data-page="research">
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -571,7 +577,7 @@ function writeSitemap(items) {
     "/assets/docs/Juan_P_Aparicio_public_CV.pdf",
     "/assets/docs/Juan_P_Aparicio_public_CV.txt",
     "/assets/docs/Juan_Aparicio_Resume.pdf",
-    ...items.map(pagePath),
+    ...items.filter((item) => !item.privateDraft).map(pagePath),
   ];
   const body = urls
     .map((url) => `  <url>\n    <loc>${SITE_URL}${url}</loc>\n    <lastmod>${LASTMOD}</lastmod>\n  </url>`)

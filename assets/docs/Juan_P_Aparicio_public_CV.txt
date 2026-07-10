@@ -17,6 +17,7 @@ RESEARCH AND PROFESSIONAL EXPERIENCE
 
 - Research Scientist (Postdoctoral Researcher), Institute for Replication, Ottawa, Canada | 2024-present. Organizes replication games and AI Games projects on human-AI interaction and research productivity. Has led studies involving more than 700 researchers and contributed to projects involving more than 2,000; co-organized replication work that fed into publications in journals including Nature, PNAS, Psychological Science, and Nature Human Behaviour.
 - Visiting positions: Centre for the Study of Existential Risk, University of Cambridge | May 2026; Victoria University of Wellington | December 2025.
+- Economics Research Consultant, Pareto | 2026. Provides economics-research expertise for LLM training and evaluation, including task design and assessment in economic reasoning, research design, and evidence evaluation. Details subject to confidentiality.
 - Senior Economic Fellow, CivicScience | May 2024-present. Ongoing part-time advisory role on survey-based demand forecasting.
 - Senior Data Scientist & Economist, CivicScience, Pittsburgh, USA | December 2022 - May 2024. Developed demand-forecasting applications using CivicScience's real-time survey data and tested them with clients including McDonald's, Target, and Bank of America. The forecasting work later became a product line.
 - Senior Consultant & Postdoctoral Researcher, Universidad EAFIT, Medellín, Colombia | 2021-2023 (Senior Consultant, July 2021 - October 2022; Postdoctoral Researcher, June 2022 - January 2023; held concurrently with the final stretch of the PhD). Led EAFIT's consulting work with the Federación Nacional de Departamentos on liquor and cigarette smuggling in Colombia, resulting in the policy report listed below.
@@ -24,7 +25,7 @@ RESEARCH AND PROFESSIONAL EXPERIENCE
 
 EDUCATION
 
-- Ph.D. in Economics, University of Western Australia | 2023. Dean's list honorable mention.
+- Ph.D. in Economics, University of Western Australia | 2022. Board of the Graduate Research School Dean's List, Honourable Mention (2023).
 - M.Sc. in Economics, Université catholique de Louvain | 2018.
 - B.S. in Economics, Universidad EAFIT | 2016. Graduated with honors.
 
@@ -41,6 +42,9 @@ WORKING PAPERS
 - Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC. With Michael Jetter and Christopher Parsons. IZA Discussion Paper No. 16054, 2023. Under journal review. https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc.
 - The Wrong Snowball: Reintegration Signals and Demobilization in Colombia. With Verónica Abril. Working paper; draft available on request.
 - You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict. With Gustavo Canavire-Bacarreza and Eric Neumayer. Working paper; under journal review; draft available on request.
+- Looks Expensive Until It Doesn't: The Timing of Pain-and-Palliative Care in Colombia. With Diana Echavarria. Working paper; draft available on request.
+- The Reproducibility and Robustness of Economics and Political Science by Method and Field. With Abel Brodeur, Derek Mikola, Nikolai Cook, Lenka Fiala, Ghina Abdul Baki, et al. Manuscript in preparation; restricted-circulation draft, April 2026.
+- Mass Reproducibility in Psychological Science. With Abel Brodeur, Ghina Abdul Baki, Luna Fazio, and collaborators. Manuscript in preparation; author list pending finalization, June 2026.
 
 
 JOURNAL COMMENTS AND REPLICATIONS
@@ -58,13 +62,14 @@ WORK IN PROGRESS
 
 - Violence and Migration: Analyzing the Mujahideen. With Christopher Parsons.
 - Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model.
+- Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities. With Thomas Lloyd and María Medellín Esguerra.
 
 
 GRANTS AND AWARDS
 
 - Research on Research initiative, I4R (Co-investigator): USD 187,210, 2025.
 - Sloan Foundation, I4R (Co-investigator): USD 134,784, 2025.
-- University of Western Australia: Dean's list, Postgraduate Award, Top Up Scholarship.
+- University of Western Australia: Board of the Graduate Research School Dean's List (Honourable Mention), Postgraduate Award, Top Up Scholarship.
 - Other awards: Laureate Thesis (Universidad EAFIT); RTP Scholarship (Australian Government); Beca ICETEX.
 
 
