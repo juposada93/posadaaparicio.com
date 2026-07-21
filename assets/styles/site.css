@@ -358,6 +358,67 @@ p {
   font-size: 0.86rem;
 }
 
+.job-market-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+  margin-top: clamp(34px, 5vw, 62px);
+  margin-bottom: clamp(12px, 2vw, 24px);
+  padding: clamp(32px, 5vw, 58px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 250, 241, 0.82);
+  box-shadow: 0 1px 0 rgba(25, 24, 20, 0.04);
+}
+
+.job-market-feature h2 {
+  max-width: 19ch;
+  margin: 10px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.15rem, 4.1vw, 4rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.job-market-feature-copy > p:not(.job-market-byline) {
+  max-width: 72ch;
+  color: #403b34;
+  font-size: 1.04rem;
+}
+
+.job-market-byline {
+  margin: 18px 0 0;
+  color: var(--green);
+  font-weight: 760;
+}
+
+.job-market-feature-meta dl {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+
+.job-market-feature-meta dl > div {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.job-market-feature-meta dt {
+  color: var(--green);
+  font-size: 0.73rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.job-market-feature-meta dd {
+  margin: 5px 0 0;
+  color: #403b34;
+  line-height: 1.4;
+}
+
 .hero-visual {
   align-self: stretch;
   min-height: 500px;
@@ -482,6 +543,15 @@ p {
   background: rgba(255, 250, 241, 0.82);
 }
 
+.theme-strand {
+  margin-bottom: 20px;
+  color: var(--green);
+  font-size: 0.7rem;
+  font-weight: 820;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
 .theme svg {
   width: 72px;
   height: 72px;
@@ -520,7 +590,7 @@ p {
 }
 
 .paper-grid.all {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .paper-card {
@@ -1145,6 +1215,10 @@ blockquote cite {
   border-bottom: 1px solid var(--line);
 }
 
+.page-hero h1.long-title {
+  font-size: clamp(2.15rem, 4.15vw, 3.65rem);
+}
+
 .cv-hero {
   width: min(1260px, calc(100% - 36px));
   display: grid;
@@ -1370,7 +1444,8 @@ blockquote cite {
   .hero,
   .split,
   .section-header,
-  .cv-hero {
+  .cv-hero,
+  .job-market-feature {
     grid-template-columns: 1fr;
   }
 
@@ -1436,9 +1511,18 @@ blockquote cite {
     width: auto;
     flex: 1 1 100%;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .site-nav a {
+    flex: 0 0 auto;
     padding: 8px 10px;
     font-size: 0.82rem;
   }
@@ -1480,6 +1564,11 @@ blockquote cite {
   .page-hero h1 {
     font-size: clamp(2rem, 9vw, 2.45rem);
     line-height: 1.04;
+  }
+
+  .job-market-feature {
+    width: calc(100vw - 24px);
+    padding: 26px 22px;
   }
 
   .meta-strip,

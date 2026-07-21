@@ -55,7 +55,8 @@ window.JPA_RESEARCH = [
     title: "Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC",
     shortTitle: "Demobilizing Rebels",
     category: "working",
-    sortRank: 108,
+    sortRank: 120,
+    badge: "Job Market Paper",
     status: "Under journal review (IZA Discussion Paper)",
     year: "2023",
     authors: "With Michael Jetter and Christopher Parsons",
@@ -70,7 +71,8 @@ window.JPA_RESEARCH = [
     visual: { type: "signal", accent: "#2f6f5e", label: "Signal x emotion", metric: "1,000+" },
     video: "https://www.youtube.com/watch?v=cx1D6QZw8yk",
     links: [
-      { label: "IZA", url: "https://www.iza.org/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc" },
+      { label: "Download paper (PDF)", url: "https://docs.iza.org/dp16054.pdf" },
+      { label: "IZA record", url: "https://www.iza.org/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc" },
       { label: "Video presentation", url: "https://www.youtube.com/watch?v=cx1D6QZw8yk" }
     ],
     featured: true
@@ -528,9 +530,9 @@ window.JPA_RESEARCH = [
     themes: ["Media", "Conflict", "Colombia"],
     methods: ["Staggered difference-in-differences", "Event studies", "Municipality panels"],
     abstract: "This paper examines the unintended consequences of introducing community radios on violent conflict in Colombia. Our empirical design exploits staggered changes in municipality-year community-radio presence and compares municipalities before and after coverage begins relative to municipalities that have not yet reached coverage. Using an event study difference-in-differences framework, we find that the introduction of community radios is associated with a statistically significant increase in killings by paramilitary militias linked to right-wing interests such as the Autodefensas Unidas de Colombia (AUC) but not by the left-wing Revolutionary Armed Forces of Colombia (FARC). We suggest that this result is because community radio discourse is itself left-leaning and potentially more compatible with FARC messaging. To corroborate this claim, we complement the causal estimates with a content analysis of 25 station proposals, showing that participatory and rights-based language dominates security/order framing language. Thus, the emergence of community radios is likely to threaten the AUC much more than the FARC. Consistent with this hypothesis, we find lethal violence exerted by the FARC even goes down several years after first community radio exposure in more left-leaning municipalities. Our findings highlight the nuanced and disruptive role of community radios on territorial dynamics in civil conflict zones. They underscore the dual-edged nature of media interventions, as they can unintentionally exacerbate violence in the presence of existing structures of violence, depending on how the intervention is received by those dominating the area. Policymakers are advised to integrate media-based initiatives with broader strategies for peacebuilding and governance, offering valuable insights for other conflict-affected regions worldwide.",
-    summary: "Introducing community radios in Colombia increased killings by right-wing paramilitaries (AUC) but not by the FARC — and FARC violence even fell over time in more left-leaning municipalities.",
+    summary: "The introduction of community radios in Colombia was associated with increased killings by right-wing paramilitaries (AUC) but not by the FARC — and FARC violence fell over time in more left-leaning municipalities.",
     insight: "Giving communities a public voice threatened the armed group whose control it challenged: media interventions can backfire where violent actors dominate.",
-    brief: "Community radios are meant to strengthen communities — can they instead amplify violence? Tracking when each Colombian municipality first received a community radio signal between 1990 and 2016, and comparing places just before and after the signal arrived, we find that community radio increased killings by the right-wing AUC paramilitaries but not by the left-wing FARC; in more left-leaning municipalities, FARC violence even declined in later years. A content analysis of station proposals suggests why: community-radio discourse is participatory and rights-based, threatening paramilitary control far more than guerrilla messaging.",
+    brief: "Community radios are meant to strengthen communities — can they instead amplify violence? Tracking when each Colombian municipality first received a community radio signal between 1990 and 2016, and comparing places just before and after the signal arrived, we find that community-radio entry was associated with increased killings by the right-wing AUC paramilitaries but not by the left-wing FARC; in more left-leaning municipalities, FARC violence declined in later years. A content analysis of station proposals suggests why: community-radio discourse is participatory and rights-based, threatening paramilitary control far more than guerrilla messaging.",
     visual: { type: "radio", accent: "#8d3d3d", label: "Broadcast", metric: "Local" },
     links: [
       { label: "PDF draft", url: "/assets/docs/Aparicio_Canavire-Bacarreza_Neumayer_Community_Radios.pdf" }

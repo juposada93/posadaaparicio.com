@@ -315,7 +315,9 @@ function setupVideoFacades() {
       iframe.title = wrap.dataset.videoTitle || "Video presentation";
       iframe.allowFullscreen = true;
       iframe.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture";
+      iframe.tabIndex = -1;
       wrap.replaceChildren(iframe);
+      iframe.focus();
     });
   });
 }

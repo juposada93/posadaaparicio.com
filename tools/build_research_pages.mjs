@@ -65,10 +65,17 @@ function linkList(links, fallbackItem = null) {
   if (!links || links.length === 0) {
     if (!fallbackItem) return "";
     const subject = encodeURIComponent(`Draft request: ${fallbackItem.title}`);
-    return `<a class="paper-link" href="mailto:jposadaa@uottawa.ca?subject=${subject}">Request draft by email</a>`;
+    return `<a class="paper-link" href="mailto:juposada93@gmail.com?subject=${subject}">Request draft by email</a>`;
   }
   return links
     .map((link) => `<a class="paper-link" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
+    .join("");
+}
+
+function heroLinkList(item) {
+  if (item.privateDraft || !item.links || item.links.length === 0) return "";
+  return item.links
+    .map((link, index) => `<a class="button${index === 0 ? "" : " secondary"}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
     .join("");
 }
 
@@ -380,7 +387,7 @@ function articleJsonLd(item) {
     keywords: [...(item.themes || []), ...(item.methods || [])],
     identifier: item.doi || undefined,
     url: `${SITE_URL}${pagePath(item)}`,
-    sameAs: link?.url,
+    sameAs: absoluteUrl(link?.url),
   };
 }
 
@@ -391,7 +398,7 @@ function header(active = "research") {
           <span class="brand-mark">JPA</span>
           <span class="brand-text">
             <span class="brand-name">Juan P. Aparicio</span>
-            <span class="brand-role">Applied economist &amp; data scientist</span>
+            <span class="brand-role">Economist &middot; 2026–27 academic job market</span>
           </span>
         </a>
         <nav class="site-nav" aria-label="Primary navigation">
@@ -409,7 +416,7 @@ function footer() {
   return `    <footer class="footer">
       <div class="footer-inner">
         <span>Juan P. Aparicio</span>
-        <span><a href="mailto:jposadaa@uottawa.ca">jposadaa@uottawa.ca</a> - <a href="https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en" target="_blank" rel="me noreferrer">Scholar</a> - <a href="https://orcid.org/0000-0001-5887-2440" target="_blank" rel="me noreferrer">ORCID</a> - <a href="https://github.com/juposada93" target="_blank" rel="me noreferrer">GitHub</a> - <a href="https://www.linkedin.com/in/juan-pablo-posada-aparicio/" target="_blank" rel="me noreferrer">LinkedIn</a></span>
+        <span><a href="mailto:juposada93@gmail.com">juposada93@gmail.com</a> - <a href="https://scholar.google.com/citations?user=ap4duGUAAAAJ&amp;hl=en" target="_blank" rel="me noreferrer">Scholar</a> - <a href="https://orcid.org/0000-0001-5887-2440" target="_blank" rel="me noreferrer">ORCID</a> - <a href="https://github.com/juposada93" target="_blank" rel="me noreferrer">GitHub</a> - <a href="https://www.linkedin.com/in/juan-pablo-posada-aparicio/" target="_blank" rel="me noreferrer">LinkedIn</a></span>
       </div>
     </footer>`;
 }
@@ -467,10 +474,12 @@ function paperPage(item) {
   const pageUrl = `${SITE_URL}${pagePath(item)}`;
   const og = ogImage(item);
   const links = linkList(item.links, item);
+  const heroLinks = heroLinkList(item);
   const doiRow = item.doi
     ? `<div><dt>DOI</dt><dd><a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(doiValue(item.doi))}</a></dd></div>`
     : "";
   const badge = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
+  const titleClass = item.title.length > 82 ? ' class="long-title"' : "";
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -501,12 +510,12 @@ ${header("research")}
 
     <main id="main-content">
       <section class="page-hero">
-        <div class="eyebrow">${escapeHtml(categoryLabel(item.category))} | ${escapeHtml(item.year)}</div>
-        <h1>${escapeHtml(item.title)}</h1>
+        <div class="eyebrow">${escapeHtml(item.badge || categoryLabel(item.category))} | ${escapeHtml(item.year)}</div>
+        <h1${titleClass}>${escapeHtml(item.title)}</h1>
         <p>${escapeHtml(item.summary)}</p>
         <div class="hero-actions">
-          <a class="button" href="/research.html">Back to research</a>
-          ${links}
+          ${heroLinks}
+          <a class="button secondary" href="/research.html">Back to research</a>
         </div>
       </section>
 

@@ -1,5 +1,25 @@
 .DS_Store
+.Rhistory
 tmp/
+.playwright-cli/
+output/
+tools/__pycache__/
+data/applications/
+career-step-up-job-search-*.md
+career-step-up-job-tracker.md
+recommendation_sections_juan.tex
+assets/docs/Juan_Aparicio_*_Application.*
+assets/docs/Juan_Aparicio_*_Cover_Letter.pdf
+assets/docs/Juan_Aparicio_*_Writing_Sample.pdf
+assets/docs/Juan_Aparicio_*_Statement_of_Interest.pdf
+assets/docs/Juan_Aparicio_*_Work_Samples.pdf
+assets/docs/Juan_Aparicio_*_Sample_Syllabus.pdf
+tools/*apply*.js
+tools/*probe*.js
+tools/*fill*.js
+tools/retry_*.js
+tools/build_*application*.py
+tools/build_*letter*.py
 Academic CV ATS.pdf
 assets/images/field.jpg
 assets/images/headshot.jpg

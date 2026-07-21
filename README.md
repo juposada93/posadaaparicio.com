@@ -12,6 +12,7 @@ Static professional website for `posadaaparicio.com`.
 - `data/research.js` - source of truth for research cards.
 - `data/econ-market-cv.json` - source for the economics job market CV.
 - `tools/build_econ_market_cv.py` - regenerates the job market CV in `assets/docs/`.
+- `tools/check_site.py` - validates internal references, page structure, metadata, and JSON-LD.
 
 ## Local preview
 
@@ -35,11 +36,16 @@ Edit `data/research.js` for paper titles, statuses, links, and visual-card metad
 
 ```bash
 /Users/pablo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 tools/build_econ_market_cv.py
+/Users/pablo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 tools/build_public_cv.py
+node tools/build_research_pages.mjs
+/Users/pablo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 tools/check_site.py
 ```
+
+`Juan_P_Aparicio_public_CV.pdf` and `.txt` are compatibility aliases for old links. The public-CV builder now copies the current economics job-market CV to those paths; do not maintain a second CV source.
 
 ## Before publishing
 
 - Confirm current affiliation wording.
 - Review paper statuses and add missing paper links.
-- Add a confirmed LinkedIn URL if desired.
-- Point `posadaaparicio.com` to the chosen host after the static version is approved.
+- Confirm that the generated research pages and compatibility CV aliases are current.
+- Keep application-specific files inside ignored paths; this repository and its GitHub Pages output are public.

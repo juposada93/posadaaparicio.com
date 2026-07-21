@@ -59,7 +59,7 @@
   },
   "job_market_paper": {
     "title": "Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC",
-    "url": "https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc",
+    "url": "https://docs.iza.org/dp16054.pdf",
     "coauthors": "with Michael Jetter and Christopher Parsons",
     "status": "IZA Discussion Paper No. 16054; under journal review",
     "abstract": "In the early 2000s, the Colombian government broadcast radio messages during national-team football matches encouraging FARC combatants to demobilize. We combine match dates and kick-off times with spatial and temporal variation in rain-induced radio reception in a municipality-day panel covering 2003-2016. Family-oriented messages induced more than 1,000 demobilizations, while appeals to national unity had no detectable effect. Persuasion was strongest following unexpected losses, when negative emotional cues made family identity more salient. A model combining identity salience and emotional state, together with tests using holidays and local climatic anomalies, supports this mechanism. The results show that the effectiveness of persuasion depends on the interaction between message content, identity, and emotional context."
@@ -106,7 +106,7 @@
       "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Canavire-Bacarreza_Neumayer_Community_Radios.pdf",
       "authors": "with Gustavo Canavire-Bacarreza and Eric Neumayer",
       "status": "Under journal review",
-      "summary": "Community-radio entry increased killings by right-wing paramilitaries but not by the FARC, illustrating how participatory media can disrupt territorial power.",
+      "summary": "Community-radio entry was associated with increased killings by right-wing paramilitaries but not by the FARC, illustrating how participatory media can disrupt territorial power.",
       "show_summary_on_cv": false
     },
     {
