@@ -475,7 +475,7 @@ window.JPA_RESEARCH = [
     shortTitle: "Timing of Palliative Care",
     category: "working",
     sortRank: 91,
-    status: "Working paper; draft available on request",
+    status: "Working paper",
     year: "2026",
     authors: "With Diana Echavarria",
     authorsFull: ["Juan P. Aparicio", "Diana Echavarria"],
@@ -486,7 +486,9 @@ window.JPA_RESEARCH = [
     insight: "A simple prior-spending rule captures much of the targeting value of a more complex machine-learning approach.",
     brief: "Using Colombia's national health claims and risk-set matching, this paper studies how the timing of pain-and-palliative-care access relates to subsequent spending. Earlier specialist access is associated with lower recorded consultation and procedure values, while a simple prior-spending rule captures most of the value of more complex targeting.",
     visual: { type: "audit", accent: "#a56a3d", label: "Earlier access", metric: "Health claims" },
-    links: [],
+    links: [
+      { label: "PDF draft", url: "/assets/docs/Aparicio_Echavarria_Palliative_Care.pdf" }
+    ],
     featured: false
   },
   {
@@ -495,7 +497,7 @@ window.JPA_RESEARCH = [
     shortTitle: "The Wrong Snowball",
     category: "working",
     sortRank: 89,
-    status: "Working paper; draft available on request",
+    status: "Working paper",
     year: "2025",
     authors: "With Verónica Abril",
     authorsFull: ["Verónica Abril", "Juan P. Aparicio"],
@@ -507,7 +509,9 @@ window.JPA_RESEARCH = [
     insight: "Reintegration's visibility can backfire: when post-exit life looks fragile or unsafe, each public milestone discourages the next defector.",
     brief: "Do reintegration programs persuade fighters beyond those enrolled? In Colombia, the most visible reintegration milestone is an ex-combatant opening a state-funded business. Using municipality-quarter administrative data and a stacked difference-in-differences design over 2005-2016, we find these openings were followed by fewer subsequent demobilizations nearby — roughly 734 fewer over three years, or 5.1 percent of observed FARC demobilizations. Two explanations fit the evidence: the businesses often struggled in plain view, and former fighters remained targets for intimidation. The visibility that demobilization policy counts on to attract the next defector can just as easily warn them off.",
     visual: { type: "snowball", accent: "#6c7f8f", label: "Signals", metric: "Networks" },
-    links: [],
+    links: [
+      { label: "PDF draft", url: "/assets/docs/Aparicio_Abril_Wrong_Snowball.pdf" }
+    ],
     featured: false
   },
   {
@@ -528,7 +532,9 @@ window.JPA_RESEARCH = [
     insight: "Giving communities a public voice threatened the armed group whose control it challenged: media interventions can backfire where violent actors dominate.",
     brief: "Community radios are meant to strengthen communities — can they instead amplify violence? Tracking when each Colombian municipality first received a community radio signal between 1990 and 2016, and comparing places just before and after the signal arrived, we find that community radio increased killings by the right-wing AUC paramilitaries but not by the left-wing FARC; in more left-leaning municipalities, FARC violence even declined in later years. A content analysis of station proposals suggests why: community-radio discourse is participatory and rights-based, threatening paramilitary control far more than guerrilla messaging.",
     visual: { type: "radio", accent: "#8d3d3d", label: "Broadcast", metric: "Local" },
-    links: [],
+    links: [
+      { label: "PDF draft", url: "/assets/docs/Aparicio_Canavire-Bacarreza_Neumayer_Community_Radios.pdf" }
+    ],
     featured: true
   },
   {

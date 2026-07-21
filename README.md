@@ -7,11 +7,11 @@ Static professional website for `posadaaparicio.com`.
 - `index.html` - homepage.
 - `research.html` - full research list with filterable paper cards.
 - `teaching.html` - teaching, evaluations, supervision, and service.
-- `cv.html` - web-readable CV summary and public CV PDF link.
+- `cv.html` - web-readable economics job market CV summary and PDF link.
 - `contact.html` - public contact options.
 - `data/research.js` - source of truth for research cards.
-- `data/public-cv.md` - source for the public PDF CV.
-- `tools/build_public_cv.py` - regenerates `assets/docs/Juan_P_Aparicio_public_CV.pdf`.
+- `data/econ-market-cv.json` - source for the economics job market CV.
+- `tools/build_econ_market_cv.py` - regenerates the job market CV in `assets/docs/`.
 
 ## Local preview
 
@@ -31,10 +31,10 @@ configured in the domain account before the custom domain resolves.
 
 ## Updating content
 
-Edit `data/research.js` for paper titles, statuses, links, and visual-card metadata. Edit `data/public-cv.md` for the public CV and regenerate the PDF:
+Edit `data/research.js` for paper titles, statuses, links, and visual-card metadata. Edit `data/econ-market-cv.json` for the job market CV and regenerate the website files:
 
 ```bash
-/Users/pablo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 tools/build_public_cv.py
+/Users/pablo/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 tools/build_econ_market_cv.py
 ```
 
 ## Before publishing

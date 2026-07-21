@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_URL = "https://www.posadaaparicio.com";
-const LASTMOD = "2026-06-10";
+const LASTMOD = "2026-07-21";
 const PORTRAIT = "/assets/images/juan-p-aparicio-portrait.jpg";
 
 function readResearchItems() {
@@ -429,7 +429,7 @@ function bibtex(item) {
     return `@book{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  publisher = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
   }
   if (!item.venue || item.venue === "Working paper") {
-    return `@unpublished{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  note = {Working paper; draft available on request},\n  year = {${item.year}}${doi}${url}\n}`;
+    return `@unpublished{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  note = {Working paper},\n  year = {${item.year}}${doi}${url}\n}`;
   }
   return `@techreport{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  institution = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
 }
@@ -574,8 +574,8 @@ function writeSitemap(items) {
     "/teaching.html",
     "/cv.html",
     "/contact.html",
-    "/assets/docs/Juan_P_Aparicio_public_CV.pdf",
-    "/assets/docs/Juan_P_Aparicio_public_CV.txt",
+    "/assets/docs/Juan_Aparicio_Economics_Job_Market_CV.pdf",
+    "/assets/docs/Juan_Aparicio_Economics_Job_Market_CV.txt",
     "/assets/docs/Juan_Aparicio_Resume.pdf",
     ...items.filter((item) => !item.privateDraft).map(pagePath),
   ];

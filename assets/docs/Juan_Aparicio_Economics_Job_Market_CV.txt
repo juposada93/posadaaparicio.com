@@ -1,0 +1,156 @@
+Juan P. Aparicio
+Economics Job Market CV
+Updated July 2026
+Medellín, Colombia | +57 313 622 6299 | juposada93@gmail.com
+https://www.posadaaparicio.com | https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en | https://orcid.org/0000-0001-5887-2440
+
+ACADEMIC APPOINTMENTS
+
+2024-present | Research Scientist, Institute for Replication (Canada)
+May 2026 | Visiting Scholar, Centre for the Study of Existential Risk, University of Cambridge
+Dec 2025 | Visiting Scholar, Victoria University of Wellington
+2022-2023 | Postdoctoral Researcher, Universidad EAFIT
+
+EDUCATION
+
+2022 | Ph.D. in Economics, The University of Western Australia
+Dissertation: Essays on the Political Economy of the Colombian Conflict. Advisers: Michael Jetter and Christopher Parsons. Board of the Graduate Research School Dean's List, Honourable Mention, 2023.
+2018 | M.Sc. in Economics, Université catholique de Louvain
+2016 | B.S. in Economics, Universidad EAFIT
+Graduated with honors; laureate thesis.
+
+RESEARCH AND TEACHING FIELDS
+
+Research fields: Political Economy; Development Economics; Applied Microeconomics
+Research interests: Conflict and Peacebuilding; Media and Information; Economics of Science and Artificial Intelligence
+Teaching fields: Microeconomics; Applied Econometrics; Development Economics; Political Economy; Macroeconomics
+
+REFERENCES
+
+Michael Jetter
+Associate Professor, Economics
+The University of Western Australia
+michael.jetter@uwa.edu.au
+
+Christopher Parsons
+Associate Professor, Economics
+The University of Western Australia
+christopher.parsons@uwa.edu.au
+
+Gustavo Canavire-Bacarreza
+Senior Economist, Poverty and Equity Global Practice
+World Bank
+gcanavire@worldbank.org
+
+Abel Brodeur
+Full Professor, Department of Economics
+University of Ottawa
+abrodeur@uottawa.ca
+
+JOB MARKET PAPER
+
+Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC
+with Michael Jetter and Christopher Parsons. IZA Discussion Paper No. 16054; under journal review.
+https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc
+Abstract: In the early 2000s, the Colombian government broadcast radio messages during national-team football matches encouraging FARC combatants to demobilize. We combine match dates and kick-off times with spatial and temporal variation in rain-induced radio reception in a municipality-day panel covering 2003-2016. Family-oriented messages induced more than 1,000 demobilizations, while appeals to national unity had no detectable effect. Persuasion was strongest following unexpected losses, when negative emotional cues made family identity more salient. A model combining identity salience and emotional state, together with tests using holidays and local climatic anomalies, supports this mechanism. The results show that the effectiveness of persuasion depends on the interaction between message content, identity, and emotional context.
+
+PEER-REVIEWED PUBLICATIONS
+
+AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science
+Brodeur, Valenta, Marcoci, Aparicio, et al. (272 authors). Proceedings of the National Academy of Sciences, 123(22), e2524747123, 2026.
+Contributions: designed and performed research; organized replication games; co-wrote the article.
+https://doi.org/10.1073/pnas.2524747123
+
+Comment on 'Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh' by Hassan et al.
+with Nikolai Cook, Derek Mikola, Ole Rogeberg, David Valenta, Michael Wiebe, Carl Bonander, and Abel Brodeur. The Economic Journal, 2026.
+Journal comment.
+https://doi.org/10.1093/ej/ueag040
+
+Captivating News: Media Attention and FARC Kidnappings
+with Michael Jetter. Journal of Economic Behavior & Organization, 202, 69-81, 2022.
+https://doi.org/10.1016/j.jebo.2022.07.029
+
+Demanda de internet: el sector mayorista de telecomunicaciones colombiano [Internet Demand: The Colombian Wholesale Telecommunications Sector]
+with John J. García Rendón. Revista de Economía del Rosario, 19(2), 2016.
+https://doi.org/10.12804/revistas.urosario.edu.co/economia/a.5624
+
+WORKING PAPERS
+
+The Wrong Snowball: Reintegration Signals and Demobilization in Colombia
+with Verónica Abril. Working paper.
+State-funded business openings by former combatants were followed by fewer nearby demobilizations, showing how visible but fragile reintegration outcomes can discourage armed-group exit.
+https://www.posadaaparicio.com/assets/docs/Aparicio_Abril_Wrong_Snowball.pdf
+
+You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict
+with Gustavo Canavire-Bacarreza and Eric Neumayer. Under journal review.
+Community-radio entry increased killings by right-wing paramilitaries but not by the FARC, illustrating how participatory media can disrupt territorial power.
+https://www.posadaaparicio.com/assets/docs/Aparicio_Canavire-Bacarreza_Neumayer_Community_Radios.pdf
+
+Looks Expensive Until It Doesn't: The Timing of Pain-and-Palliative Care in Colombia
+with Diana Echavarria. Working paper.
+Using Colombia's national health claims and risk-set matching, earlier specialist access is associated with roughly 25 percent lower recorded consultation and procedure values than delayed access; a simple prior-spending rule captures most of the value of machine-learning targeting.
+https://www.posadaaparicio.com/assets/docs/Aparicio_Echavarria_Palliative_Care.pdf
+
+The Reproducibility and Robustness of Economics and Political Science by Method and Field
+with Abel Brodeur, Derek Mikola, Nikolai Cook, Lenka Fiala, Ghina Abdul Baki, et al.. Manuscript in preparation; restricted-circulation draft (April 2026).
+Coordinates more than 1,000 researchers and 15,000 reanalyses of 248 economics and political-science studies to compare reproducibility and robustness across methods and fields.
+
+Mass Reproducibility in Psychological Science
+with Abel Brodeur, Ghina Abdul Baki, Luna Fazio, and collaborators. Manuscript in preparation; author list pending finalization (June 2026).
+Reports a large-scale I4R-Psychological Science reproducibility initiative in which 63 independent groups document materials availability, coding and preregistration issues, and computational reproducibility.
+
+A Comment on 'Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'
+with Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, and Abel Brodeur. I4R Discussion Paper Series, 2025.
+https://ideas.repec.org/p/zbw/i4rdps/241.html
+
+Work in progress:
+- Violence and Migration: Analyzing the Mujahideen (with Christopher Parsons)
+- Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model
+- Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities (with Thomas Lloyd and María Medellín Esguerra)
+
+GRANTS AND AWARDS
+
+2025 | Research on Research Initiative, Institute for Replication
+Co-Investigator; total award USD 187,210.
+2025 | Alfred P. Sloan Foundation grant, Institute for Replication
+Co-Investigator; total award USD 134,784.
+2023 | Board of the Graduate Research School Dean's List, The University of Western Australia
+Honourable Mention.
+Selected | Australian Government RTP Scholarship; UWA Postgraduate Award and Top Up Scholarship; ICETEX Scholarship
+
+SELECTED PRESENTATIONS
+
+- International Economic Association World Congress; European Economic Association - Econometric Society European Meeting (EEA-ESEM); Bolivian Conference on Development Economics.
+- Behavioral Insights in Development and Peacebuilding; LAFT America.
+- Invited seminars: Universidad de los Andes; Universidad del Rosario; Curtin University; Monash University; The University of Western Australia.
+
+TEACHING EXPERIENCE
+
+2025 | Advanced Topics in Econometrics, Universidad EAFIT
+2024 | Introduction to Microeconomics, Universidad EIA
+2023 | Introduction to the Colombian Economy, Universidad EIA
+2023 | Intermediate Macroeconomics, Universidad EIA
+2021-2023 | Microeconomics Seminar, Universidad EAFIT
+Student evaluation: 4.8/5.
+2022 | Growth and Development, Universidad EAFIT
+Student evaluation: 4.7/5.
+
+OTHER PROFESSIONAL AND POLICY EXPERIENCE
+
+2026 | Consultant, Pareto
+Economics expertise for confidential LLM training and evaluation, including task design and assessment in economic reasoning and research evaluation.
+2024-present | Senior Economic Fellow, CivicScience
+Part-time adviser on survey-based demand forecasting.
+2022-2024 | Senior Data Scientist & Economist, CivicScience
+Developed real-time survey-based demand-forecasting applications for major clients; the work became a product line.
+2021-2022 | Senior Consultant, Universidad EAFIT
+Led a national policy engagement on illicit liquor and tobacco markets for Colombia's Federación Nacional de Departamentos.
+
+Estrategias anticontrabando y crimen organizado
+Universidad EAFIT and Federación Nacional de Departamentos, 2022. Consulting engagement led by Juan P. Aparicio.
+https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf
+
+SERVICE AND SUPERVISION
+
+- Referee: PNAS Nexus; Journal of Productivity Analysis; Sports Economics Review; Journal of the Operational Research Society; Migration Studies; Revista de Economía del Rosario.
+- Selected supervision and mentoring: David Simonis (M.Sc., Louvain School of Economics); Pablo Toro (Universidad EIA); Javier Pabón and Andrés Rodríguez (Universidad EAFIT).

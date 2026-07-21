@@ -1,0 +1,282 @@
+{
+  "name": "Juan P. Aparicio",
+  "document_title": "Economics Job Market CV",
+  "updated": "July 2026",
+  "include_technical": false,
+  "contact": {
+    "email": "juposada93@gmail.com",
+    "phone": "+57 313 622 6299",
+    "location": "Medellín, Colombia",
+    "website": "https://www.posadaaparicio.com",
+    "scholar": "https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en",
+    "orcid": "https://orcid.org/0000-0001-5887-2440"
+  },
+  "academic_appointments": [
+    {
+      "dates": "2024-present",
+      "title": "Research Scientist",
+      "institution": "Institute for Replication (Canada)"
+    },
+    {
+      "dates": "May 2026",
+      "title": "Visiting Scholar",
+      "institution": "Centre for the Study of Existential Risk, University of Cambridge"
+    },
+    {
+      "dates": "Dec 2025",
+      "title": "Visiting Scholar",
+      "institution": "Victoria University of Wellington"
+    },
+    {
+      "dates": "2022-2023",
+      "title": "Postdoctoral Researcher",
+      "institution": "Universidad EAFIT"
+    }
+  ],
+  "education": [
+    {
+      "dates": "2022",
+      "degree": "Ph.D. in Economics",
+      "institution": "The University of Western Australia",
+      "details": "Dissertation: Essays on the Political Economy of the Colombian Conflict. Advisers: Michael Jetter and Christopher Parsons. Board of the Graduate Research School Dean's List, Honourable Mention, 2023."
+    },
+    {
+      "dates": "2018",
+      "degree": "M.Sc. in Economics",
+      "institution": "Université catholique de Louvain"
+    },
+    {
+      "dates": "2016",
+      "degree": "B.S. in Economics",
+      "institution": "Universidad EAFIT",
+      "details": "Graduated with honors; laureate thesis."
+    }
+  ],
+  "fields": {
+    "research": "Political Economy; Development Economics; Applied Microeconomics",
+    "interests": "Conflict and Peacebuilding; Media and Information; Economics of Science and Artificial Intelligence",
+    "teaching": "Microeconomics; Applied Econometrics; Development Economics; Political Economy; Macroeconomics"
+  },
+  "job_market_paper": {
+    "title": "Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC",
+    "url": "https://www.iza.org/en/publications/dp/16054/peacefully-demobilizing-rebels-identity-emotional-cues-and-the-farc",
+    "coauthors": "with Michael Jetter and Christopher Parsons",
+    "status": "IZA Discussion Paper No. 16054; under journal review",
+    "abstract": "In the early 2000s, the Colombian government broadcast radio messages during national-team football matches encouraging FARC combatants to demobilize. We combine match dates and kick-off times with spatial and temporal variation in rain-induced radio reception in a municipality-day panel covering 2003-2016. Family-oriented messages induced more than 1,000 demobilizations, while appeals to national unity had no detectable effect. Persuasion was strongest following unexpected losses, when negative emotional cues made family identity more salient. A model combining identity salience and emotional state, together with tests using holidays and local climatic anomalies, supports this mechanism. The results show that the effectiveness of persuasion depends on the interaction between message content, identity, and emotional context."
+  },
+  "publications": [
+    {
+      "title": "AI-assisted teams outperform AI-led teams but not human-only teams in assessing research reproducibility in quantitative social science",
+      "url": "https://doi.org/10.1073/pnas.2524747123",
+      "authors": "Brodeur, Valenta, Marcoci, Aparicio, et al. (272 authors)",
+      "venue": "Proceedings of the National Academy of Sciences, 123(22), e2524747123, 2026",
+      "note": "Contributions: designed and performed research; organized replication games; co-wrote the article."
+    },
+    {
+      "title": "Comment on 'Telementoring and Homeschooling during School Closures: A Randomized Experiment in Rural Bangladesh' by Hassan et al.",
+      "url": "https://doi.org/10.1093/ej/ueag040",
+      "authors": "with Nikolai Cook, Derek Mikola, Ole Rogeberg, David Valenta, Michael Wiebe, Carl Bonander, and Abel Brodeur",
+      "venue": "The Economic Journal, 2026",
+      "note": "Journal comment."
+    },
+    {
+      "title": "Captivating News: Media Attention and FARC Kidnappings",
+      "url": "https://doi.org/10.1016/j.jebo.2022.07.029",
+      "authors": "with Michael Jetter",
+      "venue": "Journal of Economic Behavior & Organization, 202, 69-81, 2022"
+    },
+    {
+      "title": "Demanda de internet: el sector mayorista de telecomunicaciones colombiano [Internet Demand: The Colombian Wholesale Telecommunications Sector]",
+      "url": "https://doi.org/10.12804/revistas.urosario.edu.co/economia/a.5624",
+      "authors": "with John J. García Rendón",
+      "venue": "Revista de Economía del Rosario, 19(2), 2016"
+    }
+  ],
+  "working_papers": [
+    {
+      "title": "The Wrong Snowball: Reintegration Signals and Demobilization in Colombia",
+      "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Abril_Wrong_Snowball.pdf",
+      "authors": "with Verónica Abril",
+      "status": "Working paper",
+      "summary": "State-funded business openings by former combatants were followed by fewer nearby demobilizations, showing how visible but fragile reintegration outcomes can discourage armed-group exit.",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "You Speak, We Shoot: On the Unintended Consequences of Community Radios on Colombia's Violent Conflict",
+      "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Canavire-Bacarreza_Neumayer_Community_Radios.pdf",
+      "authors": "with Gustavo Canavire-Bacarreza and Eric Neumayer",
+      "status": "Under journal review",
+      "summary": "Community-radio entry increased killings by right-wing paramilitaries but not by the FARC, illustrating how participatory media can disrupt territorial power.",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "Looks Expensive Until It Doesn't: The Timing of Pain-and-Palliative Care in Colombia",
+      "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Echavarria_Palliative_Care.pdf",
+      "authors": "with Diana Echavarria",
+      "status": "Working paper",
+      "summary": "Using Colombia's national health claims and risk-set matching, earlier specialist access is associated with roughly 25 percent lower recorded consultation and procedure values than delayed access; a simple prior-spending rule captures most of the value of machine-learning targeting.",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "The Reproducibility and Robustness of Economics and Political Science by Method and Field",
+      "authors": "with Abel Brodeur, Derek Mikola, Nikolai Cook, Lenka Fiala, Ghina Abdul Baki, et al.",
+      "status": "Manuscript in preparation; restricted-circulation draft (April 2026)",
+      "summary": "Coordinates more than 1,000 researchers and 15,000 reanalyses of 248 economics and political-science studies to compare reproducibility and robustness across methods and fields.",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "Mass Reproducibility in Psychological Science",
+      "authors": "with Abel Brodeur, Ghina Abdul Baki, Luna Fazio, and collaborators",
+      "status": "Manuscript in preparation; author list pending finalization (June 2026)",
+      "summary": "Reports a large-scale I4R-Psychological Science reproducibility initiative in which 63 independent groups document materials availability, coding and preregistration issues, and computational reproducibility.",
+      "show_summary_on_cv": false
+    }
+  ],
+  "other_research": [
+    {
+      "title": "A Comment on 'Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'",
+      "url": "https://ideas.repec.org/p/zbw/i4rdps/241.html",
+      "authors": "with Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, and Abel Brodeur",
+      "status": "I4R Discussion Paper Series, 2025"
+    }
+  ],
+  "work_in_progress": [
+    "Violence and Migration: Analyzing the Mujahideen (with Christopher Parsons)",
+    "Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model",
+    "Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities (with Thomas Lloyd and María Medellín Esguerra)"
+  ],
+  "grants_and_awards": [
+    {
+      "dates": "2025",
+      "title": "Research on Research Initiative, Institute for Replication",
+      "details": "Co-Investigator; total award USD 187,210."
+    },
+    {
+      "dates": "2025",
+      "title": "Alfred P. Sloan Foundation grant, Institute for Replication",
+      "details": "Co-Investigator; total award USD 134,784."
+    },
+    {
+      "dates": "2023",
+      "title": "Board of the Graduate Research School Dean's List, The University of Western Australia",
+      "details": "Honourable Mention."
+    },
+    {
+      "dates": "Selected",
+      "title": "Australian Government RTP Scholarship; UWA Postgraduate Award and Top Up Scholarship; ICETEX Scholarship"
+    }
+  ],
+  "presentations": [
+    "International Economic Association World Congress; European Economic Association - Econometric Society European Meeting (EEA-ESEM); Bolivian Conference on Development Economics.",
+    "Behavioral Insights in Development and Peacebuilding; LAFT America.",
+    "Invited seminars: Universidad de los Andes; Universidad del Rosario; Curtin University; Monash University; The University of Western Australia."
+  ],
+  "teaching": [
+    {
+      "dates": "2025",
+      "course": "Advanced Topics in Econometrics",
+      "institution": "Universidad EAFIT"
+    },
+    {
+      "dates": "2024",
+      "course": "Introduction to Microeconomics",
+      "institution": "Universidad EIA"
+    },
+    {
+      "dates": "2023",
+      "course": "Introduction to the Colombian Economy",
+      "institution": "Universidad EIA"
+    },
+    {
+      "dates": "2023",
+      "course": "Intermediate Macroeconomics",
+      "institution": "Universidad EIA"
+    },
+    {
+      "dates": "2021-2023",
+      "course": "Microeconomics Seminar",
+      "institution": "Universidad EAFIT",
+      "details": "Student evaluation: 4.8/5."
+    },
+    {
+      "dates": "2022",
+      "course": "Growth and Development",
+      "institution": "Universidad EAFIT",
+      "details": "Student evaluation: 4.7/5."
+    }
+  ],
+  "professional_experience": [
+    {
+      "dates": "2026",
+      "title": "Consultant",
+      "institution": "Pareto",
+      "details": "Economics expertise for confidential LLM training and evaluation, including task design and assessment in economic reasoning and research evaluation."
+    },
+    {
+      "dates": "2024-present",
+      "title": "Senior Economic Fellow",
+      "institution": "CivicScience",
+      "details": "Part-time adviser on survey-based demand forecasting."
+    },
+    {
+      "dates": "2022-2024",
+      "title": "Senior Data Scientist & Economist",
+      "institution": "CivicScience",
+      "details": "Developed real-time survey-based demand-forecasting applications for major clients; the work became a product line."
+    },
+    {
+      "dates": "2021-2022",
+      "title": "Senior Consultant",
+      "institution": "Universidad EAFIT",
+      "details": "Led a national policy engagement on illicit liquor and tobacco markets for Colombia's Federación Nacional de Departamentos."
+    }
+  ],
+  "policy_report": {
+    "title": "Estrategias anticontrabando y crimen organizado",
+    "url": "https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20y%20crimen%20organizado.pdf",
+    "venue": "Universidad EAFIT and Federación Nacional de Departamentos, 2022",
+    "note": "Consulting engagement led by Juan P. Aparicio."
+  },
+  "service": [
+    "Referee: PNAS Nexus; Journal of Productivity Analysis; Sports Economics Review; Journal of the Operational Research Society; Migration Studies; Revista de Economía del Rosario.",
+    "Selected supervision and mentoring: David Simonis (M.Sc., Louvain School of Economics); Pablo Toro (Universidad EIA); Javier Pabón and Andrés Rodríguez (Universidad EAFIT)."
+  ],
+  "technical": {
+    "software": "R; Python; Stata; SQL; Git/GitHub; LaTeX",
+    "languages": "Spanish (native); English (fluent); French and Portuguese (basic)"
+  },
+  "references": [
+    {
+      "name": "Michael Jetter",
+      "title": "Associate Professor, Economics",
+      "institution": "The University of Western Australia",
+      "short_title": "Associate Professor",
+      "short_institution": "UWA Business School",
+      "email": "michael.jetter@uwa.edu.au"
+    },
+    {
+      "name": "Christopher Parsons",
+      "title": "Associate Professor, Economics",
+      "institution": "The University of Western Australia",
+      "short_title": "Associate Professor",
+      "short_institution": "UWA Business School",
+      "email": "christopher.parsons@uwa.edu.au"
+    },
+    {
+      "name": "Gustavo Canavire-Bacarreza",
+      "title": "Senior Economist, Poverty and Equity Global Practice",
+      "institution": "World Bank",
+      "short_title": "Senior Economist",
+      "short_institution": "World Bank",
+      "email": "gcanavire@worldbank.org"
+    },
+    {
+      "name": "Abel Brodeur",
+      "title": "Full Professor, Department of Economics",
+      "institution": "University of Ottawa",
+      "short_title": "Full Professor",
+      "short_institution": "University of Ottawa",
+      "email": "abrodeur@uottawa.ca"
+    }
+  ]
+}
