@@ -247,7 +247,7 @@ function paperCard(item, compact = false) {
             <div class="paper-body">
               <div class="paper-kicker">
                 <span>${escapeHtml(categoryLabel(item.category))}</span>
-                <span>${escapeHtml(item.year)}</span>
+                <span>${escapeHtml(item.version || item.year)}</span>
               </div>
               <h3><a class="paper-title-link" href="${escapeHtml(pagePath(item))}">${title}</a></h3>
               ${badgeMarkup}
@@ -510,7 +510,7 @@ ${header("research")}
 
     <main id="main-content">
       <section class="page-hero">
-        <div class="eyebrow">${escapeHtml(item.badge || categoryLabel(item.category))} | ${escapeHtml(item.year)}</div>
+        <div class="eyebrow">${escapeHtml(item.badge || categoryLabel(item.category))} | ${escapeHtml(item.version || item.year)}</div>
         <h1${titleClass}>${escapeHtml(item.title)}</h1>
         <p>${escapeHtml(item.summary)}</p>
         <div class="hero-actions">
@@ -553,6 +553,7 @@ ${header("research")}
             ${item.roleNote ? `<div><dt>Role</dt><dd>${escapeHtml(item.roleNote)}</dd></div>` : ""}
             <div><dt>Venue</dt><dd>${escapeHtml(item.venue)}</dd></div>
             <div><dt>Year</dt><dd>${escapeHtml(item.year)}</dd></div>
+            ${item.version ? `<div><dt>Version</dt><dd>${escapeHtml(item.version)}</dd></div>` : ""}
             ${doiRow}
           </dl>
           <div class="paper-detail-links">${links}</div>
@@ -585,7 +586,7 @@ function writeSitemap(items) {
     "/contact.html",
     "/assets/docs/Juan_Aparicio_Economics_Job_Market_CV.pdf",
     "/assets/docs/Juan_Aparicio_Economics_Job_Market_CV.txt",
-    "/assets/docs/Juan_Aparicio_Resume.pdf",
+    "/assets/docs/Juan_Aparicio_Job_Market_Paper.pdf",
     ...items.filter((item) => !item.privateDraft).map(pagePath),
   ];
   const body = urls

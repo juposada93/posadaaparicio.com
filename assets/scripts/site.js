@@ -70,7 +70,7 @@ function paperCard(item, compact = false) {
       <div class="paper-body">
         <div class="paper-kicker">
           <span>${escapeHtml(categoryLabel(item.category))}</span>
-          <span>${escapeHtml(item.year)}</span>
+          <span>${escapeHtml(item.version || item.year)}</span>
         </div>
         <h3>${titleMarkup}</h3>
         ${badgeMarkup}

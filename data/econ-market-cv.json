@@ -58,10 +58,11 @@
     "teaching": "Microeconomics; Applied Econometrics; Development Economics; Political Economy; Macroeconomics"
   },
   "job_market_paper": {
-    "title": "Peacefully Demobilizing Rebels: Identity, Emotional Cues, and the FARC",
-    "url": "https://docs.iza.org/dp16054.pdf",
+    "title": "Peacefully Demobilizing Rebels: Identities, Emotional Cues, and the FARC",
+    "url": "https://www.posadaaparicio.com/assets/docs/Juan_Aparicio_Job_Market_Paper.pdf",
     "coauthors": "with Michael Jetter and Christopher Parsons",
-    "status": "IZA Discussion Paper No. 16054; under journal review",
+    "role": "First and corresponding author; project developed from Chapters 3 and 4 of my doctoral dissertation",
+    "status": "Revised July 2026; earlier version: IZA Discussion Paper No. 16054; under journal review",
     "abstract": "In the early 2000s, the Colombian government broadcast radio messages during national-team football matches encouraging FARC combatants to demobilize. We combine match dates and kick-off times with spatial and temporal variation in rain-induced radio reception in a municipality-day panel covering 2003-2016. Family-oriented messages induced more than 1,000 demobilizations, while appeals to national unity had no detectable effect. Persuasion was strongest following unexpected losses, when negative emotional cues made family identity more salient. A model combining identity salience and emotional state, together with tests using holidays and local climatic anomalies, supports this mechanism. The results show that the effectiveness of persuasion depends on the interaction between message content, identity, and emotional context."
   },
   "publications": [
@@ -173,9 +174,10 @@
   ],
   "teaching": [
     {
-      "dates": "2025",
-      "course": "Advanced Topics in Econometrics",
-      "institution": "Universidad EAFIT"
+      "dates": "2025; 2026-II",
+      "course": "Topics in Econometrics: Applied Microeconometrics",
+      "institution": "Universidad EAFIT",
+      "details": "Current 2026-II offering: Tópicos en Econometría; also taught in 2025."
     },
     {
       "dates": "2024",

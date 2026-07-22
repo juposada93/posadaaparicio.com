@@ -75,7 +75,7 @@ def card(item):
         draw.text((margin, y), line, font=title_font, fill=INK)
         y += 74
 
-    meta = f"{item.get('venue', '')} · {item.get('year', '')}".strip(" ·")
+    meta = f"{item.get('venue', '')} · {item.get('version', item.get('year', ''))}".strip(" ·")
     draw.text((margin, H - 86), meta[:90], font=meta_font, fill=MUTED)
 
     return img

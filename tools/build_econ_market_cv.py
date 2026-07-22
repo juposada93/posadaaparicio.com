@@ -370,7 +370,7 @@ def build_pdf(data: dict) -> None:
     jmp_block = section_components("Job Market Paper", styles) + [
         Paragraph(jmp_title, styles["CVEntryTitle"]),
         Paragraph(
-            f"{escape(jmp['coauthors'])}. <i>{escape(jmp['status'])}</i>.",
+            f"{escape(jmp['coauthors'])}. <b>{escape(jmp['role'])}.</b> <i>{escape(jmp['status'])}</i>.",
             styles["CVMeta"],
         ),
         Paragraph(f"<b>Abstract.</b> {escape(jmp['abstract'])}", styles["CVAbstract"]),
@@ -518,7 +518,8 @@ def build_text(data: dict) -> None:
     lines.extend(
         [
             jmp["title"],
-            f"{jmp['coauthors']}. {jmp['status']}.",
+            f"{jmp['coauthors']}. Role: {jmp['role']}.",
+            jmp["status"],
             jmp["url"],
             f"Abstract: {jmp['abstract']}",
             "",
