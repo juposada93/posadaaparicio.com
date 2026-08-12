@@ -10,6 +10,9 @@ from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.pdfdoc import PDFString
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import (
     CondPageBreak,
     HRFlowable,
@@ -35,6 +38,72 @@ MUTED = colors.HexColor("#55514b")
 ACCENT = colors.HexColor("#24594f")
 RULE = colors.HexColor("#cfc7ba")
 LINK = "#24546b"
+SANS = "CVHelvetica"
+SANS_BOLD = "CVHelvetica-Bold"
+SANS_ITALIC = "CVHelvetica-Oblique"
+SERIF_BOLD = "CVTimes-Bold"
+
+
+def register_fonts() -> None:
+    """Embed platform fonts so the public PDF renders portably."""
+    font_sets = [
+        {
+            SANS: (Path("/System/Library/Fonts/Helvetica.ttc"), 0),
+            SANS_BOLD: (Path("/System/Library/Fonts/Helvetica.ttc"), 1),
+            SANS_ITALIC: (Path("/System/Library/Fonts/Helvetica.ttc"), 2),
+            SERIF_BOLD: (
+                Path("/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf"),
+                0,
+            ),
+        },
+        {
+            SANS: (
+                Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf"),
+                0,
+            ),
+            SANS_BOLD: (
+                Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf"),
+                0,
+            ),
+            SANS_ITALIC: (
+                Path("/usr/share/fonts/truetype/liberation2/LiberationSans-Italic.ttf"),
+                0,
+            ),
+            SERIF_BOLD: (
+                Path("/usr/share/fonts/truetype/liberation2/LiberationSerif-Bold.ttf"),
+                0,
+            ),
+        },
+        {
+            SANS: (Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"), 0),
+            SANS_BOLD: (Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"), 0),
+            SANS_ITALIC: (
+                Path("/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf"),
+                0,
+            ),
+            SERIF_BOLD: (
+                Path("/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"),
+                0,
+            ),
+        },
+    ]
+    fonts = next(
+        (candidate for candidate in font_sets if all(path.exists() for path, _ in candidate.values())),
+        None,
+    )
+    if fonts is None:
+        searched = sorted({str(path) for candidate in font_sets for path, _ in candidate.values()})
+        raise FileNotFoundError(f"No complete embeddable CV font set found. Searched: {', '.join(searched)}")
+    for name, (path, subfont_index) in fonts.items():
+        if name not in pdfmetrics.getRegisteredFontNames():
+            pdfmetrics.registerFont(TTFont(name, str(path), subfontIndex=subfont_index))
+    pdfmetrics.registerFontFamily(
+        SANS,
+        normal=SANS,
+        bold=SANS_BOLD,
+        italic=SANS_ITALIC,
+        boldItalic=SANS_BOLD,
+    )
 
 
 def linked(text: str, url: str | None = None, bold: bool = False) -> str:
@@ -47,12 +116,13 @@ def linked(text: str, url: str | None = None, bold: bool = False) -> str:
 
 
 def build_styles():
+    register_fonts()
     styles = getSampleStyleSheet()
     styles.add(
         ParagraphStyle(
             name="CVName",
             parent=styles["Title"],
-            fontName="Times-Bold",
+            fontName=SERIF_BOLD,
             fontSize=24,
             leading=27,
             alignment=TA_CENTER,
@@ -64,7 +134,7 @@ def build_styles():
         ParagraphStyle(
             name="CVContact",
             parent=styles["BodyText"],
-            fontName="Helvetica",
+            fontName=SANS,
             fontSize=10,
             leading=12.2,
             alignment=TA_CENTER,
@@ -76,7 +146,7 @@ def build_styles():
         ParagraphStyle(
             name="CVSection",
             parent=styles["Heading2"],
-            fontName="Helvetica-Bold",
+            fontName=SANS_BOLD,
             fontSize=11.2,
             leading=13.2,
             textColor=ACCENT,
@@ -89,7 +159,7 @@ def build_styles():
         ParagraphStyle(
             name="CVSubsection",
             parent=styles["Heading3"],
-            fontName="Helvetica-Bold",
+            fontName=SANS_BOLD,
             fontSize=10.3,
             leading=12.4,
             textColor=INK,
@@ -102,7 +172,7 @@ def build_styles():
         ParagraphStyle(
             name="CVBody",
             parent=styles["BodyText"],
-            fontName="Helvetica",
+            fontName=SANS,
             fontSize=10,
             leading=12.15,
             textColor=INK,
@@ -121,7 +191,7 @@ def build_styles():
         ParagraphStyle(
             name="CVDate",
             parent=styles["CVBody"],
-            fontName="Helvetica-Bold",
+            fontName=SANS_BOLD,
             textColor=MUTED,
             alignment=TA_LEFT,
         )
@@ -130,9 +200,9 @@ def build_styles():
         ParagraphStyle(
             name="CVEntryTitle",
             parent=styles["CVBody"],
-            fontName="Helvetica-Bold",
-            fontSize=10.2,
-            leading=12.4,
+            fontName=SANS_BOLD,
+            fontSize=9.8,
+            leading=11.0,
             spaceAfter=1.3,
             keepWithNext=True,
         )
@@ -141,10 +211,11 @@ def build_styles():
         ParagraphStyle(
             name="CVMeta",
             parent=styles["CVBody"],
-            fontName="Helvetica-Oblique",
+            fontName=SANS_ITALIC,
+            fontSize=9.4,
             textColor=MUTED,
-            leading=11.8,
-            spaceAfter=6.4,
+            leading=10.4,
+            spaceAfter=3.5,
         )
     )
     styles.add(
@@ -304,12 +375,18 @@ def reference_table(references: list[dict], styles) -> Table:
 def draw_page(canvas, doc, data) -> None:
     canvas.saveState()
     width, height = letter
+    canvas.setTitle(data["document_title"])
+    canvas.setAuthor(data["name"])
+    canvas.setSubject("Academic curriculum vitae")
+    canvas.setCreator("Juan P. Aparicio CV builder")
+    canvas.setKeywords("economics, political economy, applied microeconomics, curriculum vitae")
+    canvas._doc.Catalog.Lang = PDFString("en-US")
 
     if doc.page > 1:
-        canvas.setFont("Helvetica-Bold", 8.6)
+        canvas.setFont(SANS_BOLD, 8.6)
         canvas.setFillColor(MUTED)
         canvas.drawString(0.62 * inch, height - 0.34 * inch, data["name"])
-        canvas.setFont("Helvetica", 8.6)
+        canvas.setFont(SANS, 8.6)
         canvas.drawRightString(width - 0.62 * inch, height - 0.34 * inch, data["document_title"])
         canvas.setStrokeColor(RULE)
         canvas.setLineWidth(0.45)
@@ -318,7 +395,7 @@ def draw_page(canvas, doc, data) -> None:
     canvas.setStrokeColor(RULE)
     canvas.setLineWidth(0.4)
     canvas.line(0.62 * inch, 0.43 * inch, width - 0.62 * inch, 0.43 * inch)
-    canvas.setFont("Helvetica", 8.4)
+    canvas.setFont(SANS, 8.4)
     canvas.setFillColor(MUTED)
     canvas.drawString(0.62 * inch, 0.27 * inch, f"Updated {data['updated']}")
     canvas.drawRightString(width - 0.62 * inch, 0.27 * inch, f"Page {doc.page}")
@@ -407,14 +484,18 @@ def build_pdf(data: dict) -> None:
     for item in data["working_papers"]:
         story.append(research_entry(item, styles, include_summary=item.get("show_summary_on_cv", True)))
 
-    # Keep the separate comment entry clear of a crowded working-paper page.
-    story.append(CondPageBreak(1.55 * inch))
+    story.append(CondPageBreak(1.25 * inch))
+    story.append(Paragraph("Other research", styles["CVSubsection"]))
     for item in data["other_research"]:
         story.append(research_entry(item, styles, include_summary=False))
 
-    story.append(Paragraph("Work in progress", styles["CVSubsection"]))
-    for item in data["work_in_progress"]:
-        story.append(Paragraph(f"- {escape(item)}", styles["CVBullet"]))
+    work_in_progress_block = [Paragraph("Work in progress", styles["CVSubsection"])]
+    work_in_progress_block.extend(
+        Paragraph(f"- {escape(item)}", styles["CVBullet"])
+        for item in data["work_in_progress"]
+    )
+    story.append(CondPageBreak(1.45 * inch))
+    story.append(KeepTogether(work_in_progress_block))
 
     grants_block = section_components("Grants and Awards", styles) + [
         dated_table(data["grants_and_awards"], styles, "title", institution_key="unused")
@@ -460,6 +541,11 @@ def build_pdf(data: dict) -> None:
         title=f"{data['name']} - {data['document_title']}",
         author=data["name"],
         subject="Academic economics job market curriculum vitae",
+        invariant=1,
+        initialFontName=SANS,
+        initialFontSize=10,
+        initialLeading=12,
+        lang="en-US",
         keywords=[
             "Juan P. Aparicio",
             "economics job market",
@@ -560,11 +646,12 @@ def build_text(data: dict) -> None:
     for item in data["working_papers"]:
         lines.append(item["title"])
         lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")
-        if item.get("summary"):
+        if item.get("summary") and item.get("show_summary_on_cv", True):
             lines.append(item["summary"])
         if item.get("url"):
             lines.append(item["url"])
         lines.append("")
+    heading("Other Research")
     for item in data["other_research"]:
         lines.append(item["title"])
         lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")

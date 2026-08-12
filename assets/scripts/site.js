@@ -53,14 +53,26 @@ function categoryLabel(category) {
   return labels[category] || category;
 }
 
+function isRedundantVenue(item) {
+  const venue = String(item.venue || "").trim();
+  const status = String(item.status || "").trim();
+  return !venue || venue === "Working paper" || status.toLowerCase().startsWith(venue.toLowerCase());
+}
+
 function paperCard(item, compact = false) {
-  const title = escapeHtml(compact ? item.shortTitle : item.title);
+  const title = escapeHtml(item.title);
   const titleMarkup = `<a class="paper-title-link" href="${escapeHtml(paperPageUrl(item))}">${title}</a>`;
+  const dateMarkup = item.category === "working"
+    ? ""
+    : `<span>${escapeHtml(item.version || item.year)}</span>`;
   const doiMarkup = item.doi
     ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(item.doi.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, ""))}</a></p>`
     : "";
   const statusMarkup = `<p class="paper-status">${escapeHtml(item.status)}</p>`;
   const badgeMarkup = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
+  const venueMarkup = isRedundantVenue(item)
+    ? ""
+    : `<p class="paper-venue">${escapeHtml(item.venue)}</p>`;
 
   return `
     <article class="paper-card reveal" data-category="${escapeHtml(item.category)}">
@@ -70,12 +82,12 @@ function paperCard(item, compact = false) {
       <div class="paper-body">
         <div class="paper-kicker">
           <span>${escapeHtml(categoryLabel(item.category))}</span>
-          <span>${escapeHtml(item.version || item.year)}</span>
+          ${dateMarkup}
         </div>
         <h3>${titleMarkup}</h3>
         ${badgeMarkup}
         <p class="paper-authors">${escapeHtml(item.authors)}</p>
-        <p class="paper-venue">${escapeHtml(item.venue)}</p>
+        ${venueMarkup}
         ${statusMarkup}
         ${doiMarkup}
         <p>${escapeHtml(item.summary)}</p>

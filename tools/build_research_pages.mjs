@@ -38,6 +38,12 @@ function categoryLabel(category) {
   return labels[category] || category;
 }
 
+function isRedundantVenue(item) {
+  const venue = String(item.venue || "").trim();
+  const status = String(item.status || "").trim();
+  return !venue || venue === "Working paper" || status.toLowerCase().startsWith(venue.toLowerCase());
+}
+
 function pagePath(item) {
   return `/papers/${encodeURIComponent(item.id)}.html`;
 }
@@ -243,6 +249,9 @@ function paperCard(item, compact = false) {
     : "";
   const badgeMarkup = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
   const insightMarkup = compact ? "" : `<p class="paper-insight">${escapeHtml(item.insight)}</p>`;
+  const venueMarkup = isRedundantVenue(item)
+    ? ""
+    : `<p class="paper-venue">${escapeHtml(item.venue)}</p>`;
   return `
           <article class="paper-card reveal is-visible" data-category="${escapeHtml(item.category)}">
             <div class="paper-visual" style="--paper-accent: ${escapeHtml(item.visual?.accent || "#24546b")}">
@@ -256,7 +265,7 @@ function paperCard(item, compact = false) {
               <h3><a class="paper-title-link" href="${escapeHtml(pagePath(item))}">${title}</a></h3>
               ${badgeMarkup}
               <p class="paper-authors">${escapeHtml(item.authors)}</p>
-              <p class="paper-venue">${escapeHtml(item.venue)}</p>
+              ${venueMarkup}
               <p class="paper-status">${escapeHtml(item.status)}</p>
               ${doiMarkup}
               <p>${escapeHtml(item.summary)}</p>
@@ -325,7 +334,7 @@ function researchItemList(items) {
         // Cap the roster in list context; the full author list lives in the
         // paper page's citation_author meta tags, which Scholar reads.
         author: authorObjects(item).slice(0, 10),
-        datePublished: item.year,
+        ...(item.category === "working" ? {} : { datePublished: item.year }),
         isPartOf: item.venue,
         identifier: item.doi || undefined,
       },
@@ -356,10 +365,12 @@ function citationMeta(item) {
   const lines = [
     `<meta name="citation_title" content="${escapeHtml(item.title)}">`,
     ...authors.map((author) => `<meta name="citation_author" content="${escapeHtml(author)}">`),
-    `<meta name="citation_publication_date" content="${escapeHtml(item.year)}">`,
     `<meta name="citation_language" content="en">`,
     `<meta name="citation_abstract_html_url" content="${SITE_URL}${pagePath(item)}">`,
   ];
+  if (item.category !== "working") {
+    lines.splice(1 + authors.length, 0, `<meta name="citation_publication_date" content="${escapeHtml(item.year)}">`);
+  }
   if (item.category === "published" && item.venueJournal) {
     lines.push(`<meta name="citation_journal_title" content="${escapeHtml(item.venueJournal)}">`);
     if (item.venueVolume) lines.push(`<meta name="citation_volume" content="${escapeHtml(item.venueVolume)}">`);
@@ -385,7 +396,7 @@ function articleJsonLd(item) {
     headline: item.title,
     description: item.summary,
     author: authorObjects(item).slice(0, 10),
-    datePublished: item.year,
+    ...(item.category === "working" ? {} : { datePublished: item.year }),
     isPartOf: item.venue,
     about: item.themes,
     keywords: [...(item.themes || []), ...(item.methods || [])],
@@ -429,7 +440,8 @@ function bibtex(item) {
   if (item.category === "wip" || item.privateDraft) return "";
   const authors = item.authorsFull && item.authorsFull.length > 0 ? item.authorsFull : ["Juan P. Aparicio"];
   const authorField = authors.length > 10 ? `${authors.slice(0, 6).join(" and ")} and others` : authors.join(" and ");
-  const key = `aparicio${item.year}${item.id.replace(/-.*$/, "")}`;
+  const keyYear = item.category === "working" ? "" : item.year;
+  const key = `aparicio${keyYear}${item.id.replace(/-.*$/, "")}`;
   const doi = item.doi ? `,\n  doi = {${doiValue(item.doi)}}` : "";
   const url = !item.doi && item.links?.[0] ? `,\n  url = {${item.links[0].url}}` : "";
   if (item.category === "published") {
@@ -440,9 +452,9 @@ function bibtex(item) {
     return `@book{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  publisher = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
   }
   if (!item.venue || item.venue === "Working paper") {
-    return `@unpublished{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  note = {Working paper},\n  year = {${item.year}}${doi}${url}\n}`;
+    return `@unpublished{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  note = {Working paper}${doi}${url}\n}`;
   }
-  return `@techreport{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  institution = {${item.venue}},\n  year = {${item.year}}${doi}${url}\n}`;
+  return `@techreport{${key},\n  title = {${item.title}},\n  author = {${authorField}},\n  institution = {${item.venue}}${doi}${url}\n}`;
 }
 
 function videoEmbed(item) {
@@ -489,6 +501,9 @@ function paperPage(item) {
     ? ""
     : `<div><dt>Year</dt><dd>${escapeHtml(item.year)}</dd></div>
             ${item.version ? `<div><dt>Version</dt><dd>${escapeHtml(item.version)}</dd></div>` : ""}`;
+  const venueDetails = isRedundantVenue(item)
+    ? ""
+    : `<div><dt>Venue</dt><dd>${escapeHtml(item.venue)}</dd></div>`;
 
   return `<!doctype html>
 <html lang="en">
@@ -514,7 +529,7 @@ function paperPage(item) {
     <link rel="stylesheet" href="/assets/styles/site.css">
     ${articleJsonLd(item) ? jsonLdScript(articleJsonLd(item)) : ""}
   </head>
-  <body data-page="research">
+  <body data-page="research" data-research-category="${escapeHtml(item.category)}">
     <a class="skip-link" href="#main-content">Skip to content</a>
 ${header("research")}
 
@@ -561,7 +576,7 @@ ${header("research")}
             <div><dt>Status</dt><dd>${escapeHtml(item.status)}</dd></div>
             <div><dt>Authors</dt><dd>${escapeHtml(authorLine(item))}</dd></div>
             ${item.roleNote ? `<div><dt>Role</dt><dd>${escapeHtml(item.roleNote)}</dd></div>` : ""}
-            <div><dt>Venue</dt><dd>${escapeHtml(item.venue)}</dd></div>
+            ${venueDetails}
             ${dateDetails}
             ${doiRow}
           </dl>
