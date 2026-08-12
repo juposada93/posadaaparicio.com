@@ -75,7 +75,13 @@ def card(item):
         draw.text((margin, y), line, font=title_font, fill=INK)
         y += 74
 
-    meta = f"{item.get('venue', '')} · {item.get('version', item.get('year', ''))}".strip(" ·")
+    venue = item.get("venue", "")
+    status = item.get("status", "")
+    redundant_venue = not venue or venue == "Working paper" or status.lower().startswith(venue.lower())
+    meta_parts = [status if redundant_venue else venue]
+    if item.get("category") != "working":
+        meta_parts.append(item.get("version", item.get("year", "")))
+    meta = " · ".join(part for part in meta_parts if part)
     draw.text((margin, H - 86), meta[:90], font=meta_font, fill=MUTED)
 
     return img

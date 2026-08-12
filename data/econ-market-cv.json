@@ -1,7 +1,7 @@
 {
   "name": "Juan P. Aparicio",
   "document_title": "Economics Job Market CV",
-  "updated": "July 2026",
+  "updated": "August 2026",
   "include_technical": false,
   "contact": {
     "email": "juposada93@gmail.com",
@@ -57,10 +57,10 @@
     "teaching_interests": "Microeconomics; Applied Econometrics; Development Economics; Political Economy; Macroeconomics"
   },
   "job_market_paper": {
-    "title": "Peacefully Demobilizing Rebels: Identities, Emotional Cues, and the FARC",
+    "title": "Peacefully demobilizing rebels: Identities, emotional cues and the FARC",
     "url": "https://www.posadaaparicio.com/assets/docs/Juan_Aparicio_Job_Market_Paper.pdf",
     "coauthors": "with Michael Jetter and Christopher Parsons",
-    "status": "Revised July 2026; under journal review",
+    "status": "Under journal review",
     "abstract": "In the early 2000s, the Colombian government broadcast radio messages during national-team football matches encouraging FARC combatants to demobilize. We combine match dates and kick-off times with spatial and temporal variation in rain-induced radio reception in a municipality-day panel covering 2003-2016. Family-oriented messages induced more than 1,000 demobilizations, while appeals to national unity had no detectable effect. Persuasion was strongest following unexpected losses, when negative emotional cues made family identity more salient. A model combining identity salience and emotional state, together with tests using holidays and local climatic anomalies, supports this mechanism. The results show that the effectiveness of persuasion depends on the interaction between message content, identity, and emotional context."
   },
   "publications": [
@@ -77,7 +77,7 @@
       "venue": "The Economic Journal, 2026"
     },
     {
-      "title": "Captivating News: Media Attention and FARC Kidnappings",
+      "title": "Captivating news: Media attention and FARC kidnappings",
       "url": "https://doi.org/10.1016/j.jebo.2022.07.029",
       "authors": "with Michael Jetter",
       "venue": "Journal of Economic Behavior & Organization, 202, 69-81, 2022"
@@ -86,12 +86,12 @@
       "title": "Demanda de internet: el sector mayorista de telecomunicaciones colombiano [Internet Demand: The Colombian Wholesale Telecommunications Sector]",
       "url": "https://doi.org/10.12804/revistas.urosario.edu.co/economia/a.5624",
       "authors": "with John J. García Rendón",
-      "venue": "Revista de Economía del Rosario, 19(2), 2016"
+      "venue": "Revista de Economía del Rosario, 19(2), 175-199, 2017"
     }
   ],
   "working_papers": [
     {
-      "title": "Hiding the Children: Strategic Concealment of Child Soldiers in Colombia's Paramilitary Demobilization",
+      "title": "Hiding the Children: Strategic Concealment of Child Soldiers in Colombia’s Paramilitary Demobilization",
       "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Hiding_the_Children.pdf",
       "authors": "Juan P. Aparicio",
       "status": "Working paper",
@@ -143,7 +143,7 @@
       "title": "A Comment on 'Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'",
       "url": "https://ideas.repec.org/p/zbw/i4rdps/241.html",
       "authors": "with Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, and Abel Brodeur",
-      "status": "Revise and resubmit at Journal of Political Economy Microeconomics; I4R Discussion Paper Series, 2025"
+      "status": "Revise and resubmit at Journal of Political Economy Microeconomics; I4R Discussion Paper Series"
     }
   ],
   "work_in_progress": [
