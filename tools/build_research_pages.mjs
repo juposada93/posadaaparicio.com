@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SITE_URL = "https://www.posadaaparicio.com";
-const LASTMOD = "2026-07-21";
+const LASTMOD = "2026-08-12";
 const PORTRAIT = "/assets/images/juan-p-aparicio-portrait.jpg";
 
 function readResearchItems() {
@@ -60,7 +60,8 @@ function primaryLink(item) {
 
 function linkList(links, fallbackItem = null) {
   if (fallbackItem?.privateDraft) {
-    return `<span class="paper-link muted">Draft not publicly circulated</span>`;
+    const publicContextLinks = links && links.length > 0 ? linkList(links) : "";
+    return `${publicContextLinks}<span class="paper-link muted">Draft not publicly circulated</span>`;
   }
   if (!links || links.length === 0) {
     if (!fallbackItem) return "";
@@ -73,7 +74,7 @@ function linkList(links, fallbackItem = null) {
 }
 
 function heroLinkList(item) {
-  if (item.privateDraft || !item.links || item.links.length === 0) return "";
+  if (!item.links || item.links.length === 0) return "";
   return item.links
     .map((link, index) => `<a class="button${index === 0 ? "" : " secondary"}" href="${escapeHtml(link.url)}" target="_blank" rel="noreferrer">${escapeHtml(link.label)}</a>`)
     .join("");
@@ -233,7 +234,10 @@ function staticVisual(item) {
 }
 
 function paperCard(item, compact = false) {
-  const title = escapeHtml(compact ? item.shortTitle : item.title);
+  const title = escapeHtml(item.title);
+  const dateMarkup = item.category === "working"
+    ? ""
+    : `<span>${escapeHtml(item.version || item.year)}</span>`;
   const doiMarkup = item.doi
     ? `<p class="paper-doi">DOI: <a href="${escapeHtml(item.doi)}" target="_blank" rel="noreferrer">${escapeHtml(doiValue(item.doi))}</a></p>`
     : "";
@@ -247,7 +251,7 @@ function paperCard(item, compact = false) {
             <div class="paper-body">
               <div class="paper-kicker">
                 <span>${escapeHtml(categoryLabel(item.category))}</span>
-                <span>${escapeHtml(item.version || item.year)}</span>
+                ${dateMarkup}
               </div>
               <h3><a class="paper-title-link" href="${escapeHtml(pagePath(item))}">${title}</a></h3>
               ${badgeMarkup}
@@ -480,6 +484,12 @@ function paperPage(item) {
     : "";
   const badge = item.badge ? `<span class="paper-badge">${escapeHtml(item.badge)}</span>` : "";
   const titleClass = item.title.length > 82 ? ' class="long-title"' : "";
+  const eyebrowDate = item.category === "working" ? "" : ` | ${escapeHtml(item.version || item.year)}`;
+  const dateDetails = item.category === "working"
+    ? ""
+    : `<div><dt>Year</dt><dd>${escapeHtml(item.year)}</dd></div>
+            ${item.version ? `<div><dt>Version</dt><dd>${escapeHtml(item.version)}</dd></div>` : ""}`;
+
   return `<!doctype html>
 <html lang="en">
   <head>
@@ -510,7 +520,7 @@ ${header("research")}
 
     <main id="main-content">
       <section class="page-hero">
-        <div class="eyebrow">${escapeHtml(item.badge || categoryLabel(item.category))} | ${escapeHtml(item.version || item.year)}</div>
+        <div class="eyebrow">${escapeHtml(item.badge || categoryLabel(item.category))}${eyebrowDate}</div>
         <h1${titleClass}>${escapeHtml(item.title)}</h1>
         <p>${escapeHtml(item.summary)}</p>
         <div class="hero-actions">
@@ -552,8 +562,7 @@ ${header("research")}
             <div><dt>Authors</dt><dd>${escapeHtml(authorLine(item))}</dd></div>
             ${item.roleNote ? `<div><dt>Role</dt><dd>${escapeHtml(item.roleNote)}</dd></div>` : ""}
             <div><dt>Venue</dt><dd>${escapeHtml(item.venue)}</dd></div>
-            <div><dt>Year</dt><dd>${escapeHtml(item.year)}</dd></div>
-            ${item.version ? `<div><dt>Version</dt><dd>${escapeHtml(item.version)}</dd></div>` : ""}
+            ${dateDetails}
             ${doiRow}
           </dl>
           <div class="paper-detail-links">${links}</div>
@@ -600,7 +609,11 @@ function writeSitemap(items) {
 }
 
 const items = readResearchItems();
-replaceGeneratedBlock("index.html", "featured-research", items.filter((item) => item.featured).slice(0, 4).map((item) => paperCard(item, true)).join("\n"));
+const featuredItems = items
+  .filter((item) => item.featured)
+  .sort((a, b) => (b.sortRank || 0) - (a.sortRank || 0))
+  .slice(0, 4);
+replaceGeneratedBlock("index.html", "featured-research", featuredItems.map((item) => paperCard(item, true)).join("\n"));
 replaceGeneratedBlock("research.html", "all-research", items.map((item) => paperCard(item, false)).join("\n"));
 replaceResearchJsonLd(items);
 writePaperPages(items);

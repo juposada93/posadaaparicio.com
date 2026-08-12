@@ -80,7 +80,7 @@ def build_styles():
             fontSize=11.2,
             leading=13.2,
             textColor=ACCENT,
-            spaceBefore=8,
+            spaceBefore=6,
             spaceAfter=2,
             keepWithNext=True,
         )
@@ -113,7 +113,7 @@ def build_styles():
         ParagraphStyle(
             name="CVBodyTight",
             parent=styles["CVBody"],
-            leading=11.8,
+            leading=11.1,
             spaceAfter=2,
         )
     )
@@ -133,7 +133,7 @@ def build_styles():
             fontName="Helvetica-Bold",
             fontSize=10.2,
             leading=12.4,
-            spaceAfter=1,
+            spaceAfter=1.3,
             keepWithNext=True,
         )
     )
@@ -144,7 +144,7 @@ def build_styles():
             fontName="Helvetica-Oblique",
             textColor=MUTED,
             leading=11.8,
-            spaceAfter=1.6,
+            spaceAfter=6.4,
         )
     )
     styles.add(
@@ -168,7 +168,7 @@ def build_styles():
             leftIndent=13,
             firstLineIndent=-8,
             bulletIndent=0,
-            leading=12.15,
+            leading=11.6,
             spaceAfter=2.2,
         )
     )
@@ -199,7 +199,7 @@ def section_components(title: str, styles) -> list:
             thickness=0.55,
             color=RULE,
             spaceBefore=0,
-            spaceAfter=4,
+            spaceAfter=2,
         ),
     ]
 
@@ -232,7 +232,7 @@ def dated_table(items: list[dict], styles, label_key: str, institution_key: str 
                 ("RIGHTPADDING", (0, 0), (0, -1), 8),
                 ("RIGHTPADDING", (1, 0), (1, -1), 0),
                 ("TOPPADDING", (0, 0), (-1, -1), 0),
-                ("BOTTOMPADDING", (0, 0), (-1, -1), 2.4),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 1.5),
             ]
         )
     )
@@ -355,11 +355,20 @@ def build_pdf(data: dict) -> None:
     section_heading(story, "Education", styles)
     story.append(dated_table(data["education"], styles, "degree"))
 
-    section_heading(story, "Research and Teaching Fields", styles)
+    section_heading(story, "Research and Teaching Interests", styles)
     fields = data["fields"]
-    story.append(Paragraph(f"<b>Research fields:</b> {escape(fields['research'])}", styles["CVBodyTight"]))
-    story.append(Paragraph(f"<b>Research interests:</b> {escape(fields['interests'])}", styles["CVBodyTight"]))
-    story.append(Paragraph(f"<b>Teaching fields:</b> {escape(fields['teaching'])}", styles["CVBodyTight"]))
+    story.append(
+        Paragraph(
+            f"<b>Research interests:</b> {escape(fields['research_interests'])}",
+            styles["CVBodyTight"],
+        )
+    )
+    story.append(
+        Paragraph(
+            f"<b>Teaching interests:</b> {escape(fields['teaching_interests'])}",
+            styles["CVBodyTight"],
+        )
+    )
 
     references_block = section_components("References", styles) + [reference_table(data["references"], styles)]
     story.append(CondPageBreak(1.65 * inch))
@@ -370,7 +379,7 @@ def build_pdf(data: dict) -> None:
     jmp_block = section_components("Job Market Paper", styles) + [
         Paragraph(jmp_title, styles["CVEntryTitle"]),
         Paragraph(
-            f"{escape(jmp['coauthors'])}. <b>{escape(jmp['role'])}.</b> <i>{escape(jmp['status'])}</i>.",
+            f"{escape(jmp['coauthors'])}. <i>{escape(jmp['status'])}</i>.",
             styles["CVMeta"],
         ),
         Paragraph(f"<b>Abstract.</b> {escape(jmp['abstract'])}", styles["CVAbstract"]),
@@ -378,15 +387,28 @@ def build_pdf(data: dict) -> None:
     story.append(CondPageBreak(2.75 * inch))
     story.append(KeepTogether(jmp_block))
 
-    section_heading(story, "Peer-Reviewed Publications", styles, minimum_space=2.0 * inch)
+    section_heading(story, "Publications", styles, minimum_space=2.0 * inch)
     for item in data["publications"]:
         story.append(research_entry(item, styles, include_summary=False))
+    report = data["policy_report"]
+    story.append(
+        KeepTogether(
+            [
+                Paragraph(linked(report["title"], report["url"], bold=True), styles["CVEntryTitle"]),
+                Paragraph(
+                    f"<b>Policy report.</b> <i>{escape(report['venue'])}</i>. {escape(report['note'])}",
+                    styles["CVMeta"],
+                ),
+            ]
+        )
+    )
 
     section_heading(story, "Working Papers", styles)
     for item in data["working_papers"]:
         story.append(research_entry(item, styles, include_summary=item.get("show_summary_on_cv", True)))
 
-    story.append(Paragraph("Other discussion paper", styles["CVSubsection"]))
+    # Keep the separate comment entry clear of a crowded working-paper page.
+    story.append(CondPageBreak(1.55 * inch))
     for item in data["other_research"]:
         story.append(research_entry(item, styles, include_summary=False))
 
@@ -410,16 +432,8 @@ def build_pdf(data: dict) -> None:
     section_heading(story, "Teaching Experience", styles)
     story.append(dated_table(data["teaching"], styles, "course"))
 
-    section_heading(story, "Other Professional and Policy Experience", styles)
+    section_heading(story, "Other Professional Experience", styles)
     story.append(dated_table(data["professional_experience"], styles, "title"))
-    report = data["policy_report"]
-    story.append(Paragraph(linked(report["title"], report["url"], bold=True), styles["CVEntryTitle"]))
-    story.append(
-        Paragraph(
-            f"<i>{escape(report['venue'])}</i>. {escape(report['note'])}",
-            styles["CVBodyTight"],
-        )
-    )
 
     section_heading(story, "Service and Supervision", styles)
     for item in data["service"]:
@@ -493,12 +507,11 @@ def build_text(data: dict) -> None:
     dated(data["academic_appointments"], "title")
     heading("Education")
     dated(data["education"], "degree")
-    heading("Research and Teaching Fields")
+    heading("Research and Teaching Interests")
     lines.extend(
         [
-            f"Research fields: {data['fields']['research']}",
-            f"Research interests: {data['fields']['interests']}",
-            f"Teaching fields: {data['fields']['teaching']}",
+            f"Research interests: {data['fields']['research_interests']}",
+            f"Teaching interests: {data['fields']['teaching_interests']}",
             "",
         ]
     )
@@ -518,14 +531,14 @@ def build_text(data: dict) -> None:
     lines.extend(
         [
             jmp["title"],
-            f"{jmp['coauthors']}. Role: {jmp['role']}.",
+            jmp["coauthors"],
             jmp["status"],
             jmp["url"],
             f"Abstract: {jmp['abstract']}",
             "",
         ]
     )
-    heading("Peer-Reviewed Publications")
+    heading("Publications")
     for item in data["publications"]:
         lines.append(item["title"])
         lines.append(f"{item.get('authors', '')}. {item.get('venue', '')}.")
@@ -534,12 +547,27 @@ def build_text(data: dict) -> None:
         if item.get("url"):
             lines.append(item["url"])
         lines.append("")
+    report = data["policy_report"]
+    lines.extend(
+        [
+            report["title"],
+            f"Policy report. {report['venue']}. {report['note']}",
+            report["url"],
+            "",
+        ]
+    )
     heading("Working Papers")
-    for item in data["working_papers"] + data["other_research"]:
+    for item in data["working_papers"]:
         lines.append(item["title"])
         lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")
         if item.get("summary"):
             lines.append(item["summary"])
+        if item.get("url"):
+            lines.append(item["url"])
+        lines.append("")
+    for item in data["other_research"]:
+        lines.append(item["title"])
+        lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")
         if item.get("url"):
             lines.append(item["url"])
         lines.append("")
@@ -553,16 +581,8 @@ def build_text(data: dict) -> None:
     lines.append("")
     heading("Teaching Experience")
     dated(data["teaching"], "course")
-    heading("Other Professional and Policy Experience")
+    heading("Other Professional Experience")
     dated(data["professional_experience"], "title")
-    lines.extend(
-        [
-            data["policy_report"]["title"],
-            f"{data['policy_report']['venue']}. {data['policy_report']['note']}",
-            data["policy_report"]["url"],
-            "",
-        ]
-    )
     heading("Service and Supervision")
     lines.extend(f"- {item}" for item in data["service"])
     lines.append("")
