@@ -1,4 +1,81 @@
 window.JPA_RESEARCH = [
+{
+  "id": "delivery-couriers",
+  "title": "When the Aggregate Misleads: Food Delivery Couriers and Traffic Crashes in Colombia",
+  "shortTitle": "Delivery Couriers and Traffic Crashes",
+  "category": "working",
+  "sortRank": 88.5,
+  "status": "Working paper",
+  "year": "2026",
+  "authors": "With Eric Neumayer",
+  "authorsFull": [
+    "Juan P. Aparicio",
+    "Eric Neumayer"
+  ],
+  "venue": "Working paper",
+  "themes": [
+    "Urban economics",
+    "Road safety",
+    "Colombia"
+  ],
+  "methods": [
+    "Platform entry",
+    "Geocoded crash records",
+    "Courier strikes"
+  ],
+  "summary": "Studies food-delivery couriers and traffic crashes using city-level platform entry and detailed crash records in Colombian cities.",
+  "insight": "Citywide fatality estimates can miss localized crash risks around restaurants, delivery destinations, and meal times.",
+  "visual": {
+    "type": "network",
+    "accent": "#725a43",
+    "label": "Delivery traffic",
+    "metric": "Local risk"
+  },
+  "links": [],
+  "featured": false
+},
+{
+  "id": "ai-research-productivity",
+  "title": "Generative AI raises research productivity while expertise remains valuable",
+  "shortTitle": "AI and Research Productivity",
+  "category": "working",
+  "sortRank": 94.5,
+  "status": "Manuscript in preparation",
+  "year": "2026",
+  "authors": "With David Valenta, Derek Mikola, Ghina Abdul Baki, Bruno Barbarioli, Luna Fazio, Lenka Fiala, the AI Replication Games Author Group, and Abel Brodeur",
+  "authorsFull": [
+    "Juan P. Aparicio",
+    "David Valenta",
+    "Derek Mikola",
+    "Ghina Abdul Baki",
+    "Bruno Barbarioli",
+    "Luna Fazio",
+    "Lenka Fiala",
+    "the AI Replication Games Author Group",
+    "Abel Brodeur"
+  ],
+  "venue": "Manuscript in preparation",
+  "themes": [
+    "Applied AI",
+    "Research productivity",
+    "Expertise"
+  ],
+  "methods": [
+    "Randomized experiment",
+    "Expert evaluation",
+    "Human-AI collaboration"
+  ],
+  "summary": "Randomizes access to ChatGPT Plus for individual researchers completing coding, error detection, robustness analysis, and written evaluations.",
+  "insight": "The draft reports gains in research performance without consistent narrowing of expertise or disciplinary gaps.",
+  "visual": {
+    "type": "network",
+    "accent": "#345d78",
+    "label": "AI assistance",
+    "metric": "Expertise"
+  },
+  "links": [],
+  "featured": false
+},
   {
     id: "captivating-news",
     title: "Captivating news: Media attention and FARC kidnappings",
@@ -85,7 +162,7 @@ window.JPA_RESEARCH = [
     shortTitle: "Hiding the Children",
     category: "working",
     sortRank: 115,
-    status: "Working paper",
+    status: "Under journal review",
     year: "2026",
     authors: "Juan P. Aparicio",
     authorsFull: ["Juan P. Aparicio"],
@@ -566,44 +643,77 @@ window.JPA_RESEARCH = [
     ],
     featured: true
   },
-  {
-    id: "violence-migration",
-    title: "Violence and Migration: Analyzing the Mujahideen",
-    shortTitle: "Violence and Migration",
-    category: "wip",
-    sortRank: 87,
-    status: "Work in progress",
-    year: "2025",
-    authors: "With Christopher Parsons",
-    authorsFull: ["Juan P. Aparicio", "Christopher Parsons"],
-    venue: "Project in progress",
-    themes: ["Conflict", "Migration", "Geocoded data"],
-    methods: ["Geocoding", "Event data", "Nonlinear dynamics"],
-    summary: "Tracks mujahideen commanders through geocoded event data to ask when fighters relocate as violence intensifies.",
-    insight: "Relocation seems to respond to how violence is changing, not just how high it is — which matters for predicting displacement.",
-    visual: { type: "migration", accent: "#345d78", label: "Relocation", metric: "Nonlinear" },
-    links: [],
-    featured: false
+{
+  "id": "violence-migration",
+  "title": "No Way Out: Violence at Home, Violence en Route, and the Suppression of Afghan Migration",
+  "shortTitle": "No Way Out",
+  "category": "working",
+  "sortRank": 87,
+  "status": "Working paper",
+  "year": "2026",
+  "authors": "With Christopher Parsons and Melissa Siegel",
+  "authorsFull": [
+    "Juan P. Aparicio",
+    "Christopher Parsons",
+    "Melissa Siegel"
+  ],
+  "venue": "Working paper",
+  "themes": [
+    "Conflict",
+    "Migration",
+    "Afghanistan"
+  ],
+  "methods": [
+    "Household migration histories",
+    "Geocoded conflict data",
+    "Route comparisons"
+  ],
+  "summary": "Links Afghan household migration histories to local and route-level violence to study when conflict prevents people from leaving.",
+  "insight": "The draft finds fewer departures when violence rises near home or along exit routes, consistent with involuntary immobility.",
+  "visual": {
+    "type": "migration",
+    "accent": "#345d78",
+    "label": "Exit routes",
+    "metric": "Mobility"
   },
-  {
-    id: "polarization",
-    title: "Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model",
-    shortTitle: "Polarization and Elections",
-    category: "wip",
-    sortRank: 86,
-    status: "Work in progress",
-    year: "2025",
-    authors: "Work in progress",
-    authorsFull: ["Juan P. Aparicio"],
-    venue: "Project in progress",
-    themes: ["Political economy", "Theory", "Elections"],
-    methods: ["Formal model", "Simulation", "Comparative statics"],
-    summary: "Extends Hotelling's framework to multi-candidate systems and studies when more candidates increase polarization.",
-    insight: "Shows how electoral entry can raise the probability that extreme candidates win.",
-    visual: { type: "spectrum", accent: "#5c4f7a", label: "Candidate space", metric: "n > 2" },
-    links: [],
-    featured: false
+  "links": [],
+  "featured": false
+},
+{
+  "id": "polarization",
+  "title": "The Entry Margin: How Polarization Advances When Elections Stop Selecting Extremists",
+  "shortTitle": "The Entry Margin",
+  "category": "working",
+  "sortRank": 86,
+  "status": "Working paper",
+  "year": "2026",
+  "authors": "With Thomas Favory",
+  "authorsFull": [
+    "Juan P. Aparicio",
+    "Thomas Favory"
+  ],
+  "venue": "Working paper",
+  "themes": [
+    "Political economy",
+    "Polarization",
+    "Elections"
+  ],
+  "methods": [
+    "Candidate-level election data",
+    "Within-contest comparisons",
+    "Composition decomposition"
+  ],
+  "summary": "Studies candidate entry and electoral selection in U.S. gubernatorial primaries and general elections, with comparisons to House and Senate races.",
+  "insight": "The draft links growing nominee extremity to changes in who runs, even as primary voters increasingly favor more moderate candidates.",
+  "visual": {
+    "type": "spectrum",
+    "accent": "#5c4f7a",
+    "label": "Candidate entry",
+    "metric": "Polarization"
   },
+  "links": [],
+  "featured": false
+},
   {
     id: "garage-churches",
     title: "Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities",

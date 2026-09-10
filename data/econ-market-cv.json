@@ -1,7 +1,7 @@
 {
   "name": "Juan P. Aparicio",
   "document_title": "Economics Job Market CV",
-  "updated": "August 2026",
+  "updated": "September 2026",
   "include_technical": false,
   "contact": {
     "email": "juposada93@gmail.com",
@@ -94,7 +94,7 @@
       "title": "Hiding the Children: Strategic Concealment of Child Soldiers in Colombia’s Paramilitary Demobilization",
       "url": "https://www.posadaaparicio.com/assets/docs/Aparicio_Hiding_the_Children.pdf",
       "authors": "Juan P. Aparicio",
-      "status": "Working paper",
+      "status": "Under journal review",
       "summary": "Documents a sharp deficit in children recorded at commander-run AUC demobilization ceremonies relative to individual exits, consistent with strategic concealment under child-recruitment liability.",
       "show_summary_on_cv": false
     },
@@ -123,6 +123,31 @@
       "show_summary_on_cv": false
     },
     {
+      "title": "When the Aggregate Misleads: Food Delivery Couriers and Traffic Crashes in Colombia",
+      "authors": "with Eric Neumayer",
+      "status": "Working paper",
+      "summary": "Combines national road-casualty records, georeferenced crash data, restaurant exposure, a dine-in ban, and courier strikes to show that delivery-courier crash externalities can be concentrated and invisible in citywide aggregates.",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "No Way Out: Violence at Home, Violence en Route, and the Suppression of Afghan Migration",
+      "authors": "with Christopher Parsons and Melissa Siegel",
+      "status": "Working paper",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "Generative AI raises research productivity while expertise remains valuable",
+      "authors": "with David Valenta, Derek Mikola, Ghina Abdul Baki, Bruno Barbarioli, Luna Fazio, Lenka Fiala, the AI Replication Games Author Group, and Abel Brodeur",
+      "status": "Manuscript in preparation",
+      "show_summary_on_cv": false
+    },
+    {
+      "title": "The Entry Margin: How Polarization Advances When Elections Stop Selecting Extremists",
+      "authors": "with Thomas Favory",
+      "status": "Working paper",
+      "show_summary_on_cv": false
+    },
+    {
       "title": "The Reproducibility and Robustness of Economics and Political Science by Method and Field",
       "authors": "with Abel Brodeur, Derek Mikola, Nikolai Cook, Lenka Fiala, Ghina Abdul Baki, et al",
       "status": "Manuscript in preparation; restricted-circulation draft",
@@ -136,19 +161,16 @@
       "status": "Official Institute for Replication-Psychological Science collaboration; meta-paper in preparation",
       "summary": "An official collaboration with Psychological Science for post-publication checks of reproducibility, robustness, and replicability; the linked editorial describes the partnership and the planned meta-paper.",
       "show_summary_on_cv": false
-    }
-  ],
-  "other_research": [
+    },
     {
       "title": "A Comment on 'Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'",
       "url": "https://ideas.repec.org/p/zbw/i4rdps/241.html",
       "authors": "with Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, and Abel Brodeur",
-      "status": "Revise and resubmit at Journal of Political Economy Microeconomics; I4R Discussion Paper Series"
+      "status": "Revise and resubmit at Journal of Political Economy Microeconomics; I4R Discussion Paper Series",
+      "show_summary_on_cv": false
     }
   ],
   "work_in_progress": [
-    "Violence and Migration: Analyzing the Mujahideen (with Christopher Parsons)",
-    "Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model",
     "Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities (with Thomas Lloyd and María Medellín Esguerra)"
   ],
   "grants_and_awards": [

@@ -150,7 +150,7 @@ def build_styles():
             fontSize=11.2,
             leading=13.2,
             textColor=ACCENT,
-            spaceBefore=6,
+            spaceBefore=4,
             spaceAfter=2,
             keepWithNext=True,
         )
@@ -203,6 +203,7 @@ def build_styles():
             fontName=SANS_BOLD,
             fontSize=9.8,
             leading=11.0,
+            spaceBefore=3,
             spaceAfter=1.3,
             keepWithNext=True,
         )
@@ -215,6 +216,7 @@ def build_styles():
             fontSize=9.4,
             textColor=MUTED,
             leading=10.4,
+            spaceBefore=2,
             spaceAfter=3.5,
         )
     )
@@ -240,7 +242,7 @@ def build_styles():
             firstLineIndent=-8,
             bulletIndent=0,
             leading=11.6,
-            spaceAfter=2.2,
+            spaceAfter=1.4,
         )
     )
     styles.add(
@@ -484,11 +486,6 @@ def build_pdf(data: dict) -> None:
     for item in data["working_papers"]:
         story.append(research_entry(item, styles, include_summary=item.get("show_summary_on_cv", True)))
 
-    story.append(CondPageBreak(1.25 * inch))
-    story.append(Paragraph("Other research", styles["CVSubsection"]))
-    for item in data["other_research"]:
-        story.append(research_entry(item, styles, include_summary=False))
-
     work_in_progress_block = [Paragraph("Work in progress", styles["CVSubsection"])]
     work_in_progress_block.extend(
         Paragraph(f"- {escape(item)}", styles["CVBullet"])
@@ -648,13 +645,6 @@ def build_text(data: dict) -> None:
         lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")
         if item.get("summary") and item.get("show_summary_on_cv", True):
             lines.append(item["summary"])
-        if item.get("url"):
-            lines.append(item["url"])
-        lines.append("")
-    heading("Other Research")
-    for item in data["other_research"]:
-        lines.append(item["title"])
-        lines.append(f"{item.get('authors', '')}. {item.get('status', '')}.")
         if item.get("url"):
             lines.append(item["url"])
         lines.append("")

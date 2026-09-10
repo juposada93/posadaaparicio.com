@@ -1,6 +1,6 @@
 Juan P. Aparicio
 Economics Job Market CV
-Updated August 2026
+Updated September 2026
 Medellín, Colombia | +57 313 622 6299 | juposada93@gmail.com
 https://www.posadaaparicio.com | https://scholar.google.com/citations?user=ap4duGUAAAAJ&hl=en | https://orcid.org/0000-0001-5887-2440
 
@@ -79,7 +79,7 @@ https://www.programaanticontrabando.com.co/pdfs/Estrategias%20anticontrabando%20
 WORKING PAPERS
 
 Hiding the Children: Strategic Concealment of Child Soldiers in Colombia’s Paramilitary Demobilization
-Juan P. Aparicio. Working paper.
+Juan P. Aparicio. Under journal review.
 https://www.posadaaparicio.com/assets/docs/Aparicio_Hiding_the_Children.pdf
 
 The Wrong Snowball: Reintegration Signals and Demobilization in Colombia
@@ -94,6 +94,18 @@ Looks Expensive Until It Doesn't: The Timing of Pain-and-Palliative Care in Colo
 with Diana Echavarria. Working paper.
 https://www.posadaaparicio.com/assets/docs/Aparicio_Echavarria_Palliative_Care.pdf
 
+When the Aggregate Misleads: Food Delivery Couriers and Traffic Crashes in Colombia
+with Eric Neumayer. Working paper.
+
+No Way Out: Violence at Home, Violence en Route, and the Suppression of Afghan Migration
+with Christopher Parsons and Melissa Siegel. Working paper.
+
+Generative AI raises research productivity while expertise remains valuable
+with David Valenta, Derek Mikola, Ghina Abdul Baki, Bruno Barbarioli, Luna Fazio, Lenka Fiala, the AI Replication Games Author Group, and Abel Brodeur. Manuscript in preparation.
+
+The Entry Margin: How Polarization Advances When Elections Stop Selecting Extremists
+with Thomas Favory. Working paper.
+
 The Reproducibility and Robustness of Economics and Political Science by Method and Field
 with Abel Brodeur, Derek Mikola, Nikolai Cook, Lenka Fiala, Ghina Abdul Baki, et al. Manuscript in preparation; restricted-circulation draft.
 
@@ -101,15 +113,11 @@ Mass Reproducibility in Psychological Science
 with Abel Brodeur, Ghina Abdul Baki, Luna Fazio, and collaborators. Official Institute for Replication-Psychological Science collaboration; meta-paper in preparation.
 https://doi.org/10.1177/09567976231221573
 
-OTHER RESEARCH
-
 A Comment on 'Delivering Remote Learning Using a Low-Tech Solution: Evidence from a Randomized Controlled Trial in Bangladesh'
 with Lenka Fiala, Jack Fitzgerald, Essi Kujansuu, Derek Mikola, David Valenta, Michael Wiebe, Matthew D. Webb, and Abel Brodeur. Revise and resubmit at Journal of Political Economy Microeconomics; I4R Discussion Paper Series.
 https://ideas.repec.org/p/zbw/i4rdps/241.html
 
 Work in progress:
-- Violence and Migration: Analyzing the Mujahideen (with Christopher Parsons)
-- Polarization in Democratic Elections: Insights from an Enhanced Hotelling's Model
 - Preaching Change: The Effect of Evangelical Churches on Crime in Colombian Cities (with Thomas Lloyd and María Medellín Esguerra)
 
 GRANTS AND AWARDS

@@ -159,7 +159,7 @@ def main() -> None:
         cv_data["job_market_paper"]["title"],
         *(item["title"] for item in cv_data["publications"]),
         *(item["title"] for item in cv_data["working_papers"]),
-        *(item["title"] for item in cv_data["other_research"]),
+        *(item["title"] for item in cv_data.get("other_research", [])),
         *(item.split(" (with ", 1)[0] for item in cv_data["work_in_progress"]),
     ]
     for title in cv_research_titles:
@@ -171,7 +171,8 @@ def main() -> None:
 
     plain_text = canonical_text.read_text(encoding="utf-8")
     for paper in cv_data["working_papers"]:
-        if not paper.get("show_summary_on_cv", True) and paper.get("summary") in plain_text:
+        summary = paper.get("summary")
+        if not paper.get("show_summary_on_cv", True) and summary and summary in plain_text:
             errors.append(f"plain-text CV includes a suppressed summary: {paper['title']!r}")
 
     client_script = (ROOT / "assets/scripts/site.js").read_text(encoding="utf-8")
